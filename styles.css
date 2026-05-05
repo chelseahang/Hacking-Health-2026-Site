@@ -448,6 +448,69 @@ p  { margin: 0 0 1em; }
 }
 .problem-card h3 { margin: 0 0 0.5rem; }
 .problem-card p  { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+.problem-card--purple {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+}
+.problem-card--purple h3 { color: #ffffff; }
+.problem-card--purple p  { color: rgba(255,255,255,0.85); }
+.problem-card--purple:hover { box-shadow: 0 8px 28px rgba(168, 85, 247, 0.4); }
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================
+   CHECKLISTS
+   ========================================================== */
+.checklist-step {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.checklist-step h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist li {
+  margin-bottom: 0.65rem;
+}
+.checklist li:last-child {
+  margin-bottom: 0;
+}
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.checklist input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+.checklist-note {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin-top: 2rem;
+}
 
 /* ==========================================================
    GUIDES
