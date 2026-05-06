@@ -12,13 +12,13 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo-link"><img src="assets/sanofi-logo.png" alt="Sanofi" class="nav-logo" /></a><a href="index.html" class="nav-brand">Hacking Health Toronto</a>
+      <a href="index.html" class="nav-logo-link"><img src="assets/sanofi-logo.png" alt="Sanofi" class="nav-logo" /><span class="nav-logo-x">&times;</span><img src="assets/snowflake-logo.png" alt="Snowflake" class="nav-logo nav-logo--snowflake" /></a><a href="index.html" class="nav-brand">Hacking Health Toronto</a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="speakers.html">People</a>
+        <a href="people.html">People</a>
         <a href="problem-spaces.html" class="active">Problem Spaces</a>
         <a href="teams.html">Teams</a>
         <li class="nav-dropdown">
@@ -47,8 +47,9 @@
       <!-- ============================================================
            STEP 1: Business Impact Assessment
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 1: Business Impact Assessment</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 1: Business Impact Assessment</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 10 minutes</span>
           <span>&#x1F3AF; Test whether your agent understands the business problem and can articulate value</span>
@@ -95,13 +96,15 @@ should I be visiting in person this month to maximize consent success?</pre>
           <li><label><input type="checkbox"> References CASL regulatory context appropriately</label></li>
           <li><label><input type="checkbox"> Provides actionable, specific guidance rather than generic responses</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            STEP 2: Prioritization Intelligence Validation
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 2: Prioritization Intelligence Validation</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 2: Prioritization Intelligence Validation</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 12 minutes</span>
           <span>&#x1F9E0; Test whether your agent&rsquo;s scoring model is accurate, explainable, and actionable</span>
@@ -155,13 +158,15 @@ How does your prioritization handle this? Should I try again?</pre>
           <li><label><input type="checkbox"> Handles edge cases (declined, no data, new HCP) appropriately</label></li>
           <li><label><input type="checkbox"> Responses are specific, not generic</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            STEP 3: Scalability & Regulatory Adaptability
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 3: Scalability &amp; Regulatory Adaptability</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 3: Scalability &amp; Regulatory Adaptability</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 8 minutes</span>
           <span>&#x1F30D; Test whether your agent can operate across markets and regulatory frameworks</span>
@@ -208,13 +213,15 @@ data sources could be used to maintain prioritization quality?</pre>
           <li><label><input type="checkbox"> Positions solution as a replicable global framework</label></li>
           <li><label><input type="checkbox"> Provides market-specific recommendations without losing core logic</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            STEP 4: Production Readiness & Data Integrity
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 4: Production Readiness &amp; Data Integrity</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 4: Production Readiness &amp; Data Integrity</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 8 minutes</span>
           <span>&#x2699;&#xFE0F; Test whether your agent handles real-world data quality and operational challenges</span>
@@ -267,13 +274,15 @@ Can I action these recommendations directly from the prioritization list?</pre>
           <li><label><input type="checkbox"> Provides clear audit trail for prioritization decisions</label></li>
           <li><label><input type="checkbox"> Responses are operationally actionable, not theoretical</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            STEP 5: Innovation & Technical Excellence
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 5: Innovation &amp; Technical Excellence</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 5: Innovation &amp; Technical Excellence</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 5 minutes</span>
           <span>&#x1F6E0;&#xFE0F; Test the depth, adaptability, and intelligence of your agent</span>
@@ -320,13 +329,15 @@ are most likely to give consent if approached in the next 30 days?</pre>
           <li><label><input type="checkbox"> Maintains response quality across varied query types</label></li>
           <li><label><input type="checkbox"> Goes beyond simple lookup &mdash; shows reasoning and intelligence</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            STEP 6: Demo & Storytelling Preparation
            ============================================================ -->
-      <div class="checklist-step">
-        <h3>Step 6: Demo &amp; Storytelling Preparation</h3>
+      <details class="checklist-step">
+        <summary><h3>Step 6: Demo &amp; Storytelling Preparation</h3></summary>
+        <div class="checklist-step-body">
         <p class="step-meta">
           <span>&#x23F1; 2 minutes</span>
           <span>&#x1F3A4; Create compelling presentation materials for your pitch</span>
@@ -389,13 +400,15 @@ compliance considerations prominently featured.</pre>
           <li><label><input type="checkbox"> Pitch deck created using Concierge with compelling visuals</label></li>
           <li><label><input type="checkbox"> Business case strengthened using ValueLens with compliance risk assessment</label></li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <!-- ============================================================
            FINAL VERIFICATION SUMMARY
            ============================================================ -->
-      <div class="checklist-step checklist-step--summary">
-        <h3>&#x1F3C6; Final Verification Summary</h3>
+      <details class="checklist-step checklist-step--summary">
+        <summary><h3>&#x1F3C6; Final Verification Summary</h3></summary>
+        <div class="checklist-step-body">
 
         <p class="step-section-label">Scoring Checkpoint</p>
         <table class="score-table">
@@ -464,7 +477,8 @@ compliance considerations prominently featured.</pre>
           <li>&#x2705; <strong>Presentation Ready:</strong> Professional pitch deck created with Concierge</li>
           <li>&#x2705; <strong>Business Case Ready:</strong> Structured proposal developed with ValueLens</li>
         </ul>
-      </div>
+        </div>
+      </details>
 
       <p class="checklist-note">&#x1F4A1; <strong>Final Recommendation:</strong> Review your agent&rsquo;s responses against each checklist. Focus remaining development time on the lowest-scoring areas. Use Concierge to build your pitch deck and ValueLens to create a decision-ready business case with stakeholder mapping and regulatory risk assessment.<br><br>Ready to win? Your agent should turn CASL&rsquo;s &ldquo;one meaningful chance&rdquo; into a strategic advantage &mdash; every consent opportunity backed by data, every field visit optimized for impact! &#x1F680;</p>
     </div>

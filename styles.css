@@ -103,6 +103,17 @@ p  { margin: 0 0 1em; }
   width: auto;
   display: block;
 }
+.nav-logo--snowflake {
+  height: 26px;
+  margin-left: 4px;
+}
+.nav-logo-x {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0 6px;
+  line-height: 1;
+  user-select: none;
+}
 
 .nav-brand {
   font-weight: 700;
@@ -212,6 +223,12 @@ p  { margin: 0 0 1em; }
 .hero-content {
   max-width: 760px;
   margin: 0 auto;
+}
+.hero-brand-img {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: min(420px, 80vw);
+  border-radius: 12px;
 }
 .eyebrow {
   text-transform: uppercase;
@@ -477,6 +494,51 @@ p  { margin: 0 0 1em; }
   margin: 0 0 1rem;
   font-size: 1.1rem;
   color: var(--accent);
+}
+
+/* Collapsible checklist steps using <details> */
+details.checklist-step {
+  padding: 0;
+}
+details.checklist-step summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 12px;
+  user-select: none;
+}
+details.checklist-step summary::-webkit-details-marker { display: none; }
+details.checklist-step summary::after {
+  content: "›";
+  font-size: 1.4rem;
+  color: var(--brand-color);
+  font-weight: 700;
+  transform: rotate(90deg);
+  display: inline-block;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+details.checklist-step[open] summary::after {
+  transform: rotate(270deg);
+}
+details.checklist-step summary h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+details.checklist-step[open] summary {
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 12px 12px 0 0;
+}
+details.checklist-step[open] {
+  border-color: var(--brand-color);
+}
+.checklist-step-body {
+  padding: 1.5rem 1.75rem;
 }
 .checklist {
   list-style: none;
@@ -1244,4 +1306,69 @@ p  { margin: 0 0 1em; }
   .venue-grid { grid-template-columns: 1fr; }
 
   .hero { padding: 4rem 1.25rem; }
+}
+/* ==========================================================
+   KEYNOTE SPEAKERS - HORIZONTAL LAYOUT
+   ========================================================== */
+#speakers .speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+#speakers .speaker-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  text-align: left;
+  padding: 2rem;
+  max-width: none;
+}
+
+#speakers .speaker-photo {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+}
+
+#speakers .speaker-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#speakers .speaker-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+}
+
+#speakers .speaker-title {
+  margin-bottom: 0.75rem;
+}
+
+#speakers .speaker-card p:last-child {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  #speakers .speaker-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  #speakers .speaker-photo {
+    align-self: center;
+  }
+}
+/* ==========================================================
+   KEYNOTE SPEAKERS - WIDER TITLE COLUMN
+   ========================================================== */
+#speakers .speaker-title {
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  word-wrap: break-word;
 }
