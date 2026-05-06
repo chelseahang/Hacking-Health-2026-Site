@@ -1302,3 +1302,11 @@ p  { margin: 0 0 1em; }
     align-self: center;
   }
 }
+/* ==========================================================
+   KEYNOTE SPEAKERS - WIDER TITLE COLUMN
+   ========================================================== */
+#speakers .speaker-title {
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
