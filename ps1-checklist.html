@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PS1 Checklist | Hacking Health Toronto 2026</title>
-  <meta name="description" content="Verification checklist for Problem Space 1: Commercial Canada Invoice Reconciliation." />
+  <meta name="description" content="Agent verification checklist for Problem Space 1: Commercial Invoice to Revenue Accuracy." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -38,42 +38,571 @@
   <section class="section">
     <div class="container container-narrow">
       <a href="problem-spaces.html" class="guide-back">&larr; Back to Problem Spaces</a>
-      <h2 class="section-title" style="text-align:left;margin-top:1.5rem;">01 &mdash; Commercial Canada: Invoice – Pricing – Revenue Reconciliation</h2>
-      <p class="section-subtitle" style="text-align:left;">Use this checklist to verify your agent is working as expected.</p>
+      <h2 class="section-title" style="text-align:left;margin-top:1.5rem;">Commercial Invoice to Revenue Accuracy</h2>
+      <p class="section-subtitle" style="text-align:left;margin-bottom:0.75rem;">&#x1F50D; Agent Verification Process</p>
+      <p class="section-subtitle" style="text-align:left;">Test your agent directly to validate it meets the judging criteria.</p>
+      <p style="color:var(--text-muted);margin-bottom:2rem;"><strong style="color:var(--text-color);">Total Time: ~45 minutes</strong> &nbsp;&bull;&nbsp; <strong style="color:var(--text-color);">Purpose:</strong> Test your agent directly to validate it meets the judging criteria</p>
+      <p style="color:var(--text-muted);margin-bottom:2rem;">Each step contains prompts to paste directly into your agent. The goal is to test whether your agent responds accurately, intelligently, and in line with the problem it was built to solve. Complete the checklists after each response to track your score.</p>
 
       <!-- ============================================================
-           EDIT: Add step titles and checklist items below.
-           Copy a checklist-step block to add more steps.
+           STEP 1: Business Impact Assessment
            ============================================================ -->
-
       <div class="checklist-step">
-        <h3>Step 1: [EDIT: Add step title]</h3>
+        <h3>Step 1: Business Impact Assessment</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 10 minutes</span>
+          <span>&#x1F3AF; Validate your understanding of the business problem</span>
+        </p>
+
+        <p class="step-section-label">Research &amp; Resources</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Before testing your agent, review:</p>
+        <ul class="look-for-list">
+          <li>Current Commercial Canada invoice validation process and workflows</li>
+          <li>Payer agreement structures and pricing models</li>
+          <li>Key stakeholders: Trade &amp; Revenue Management, Market Access, PSP, Finance</li>
+          <li>Time spent on manual reconciliation (hours/week per analyst)</li>
+          <li>Current consultant costs ($200K&ndash;$300K annually) and revenue impact (~$100M+)</li>
+        </ul>
+
+        <p class="step-section-label">Self-Assessment</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.5rem;">Can you answer these clearly?</p>
+        <ul class="look-for-list">
+          <li>What is the ~$100M+ revenue impact in specific terms?</li>
+          <li>Why is manual validation a bottleneck?</li>
+          <li>What does a Trade &amp; Revenue Management analyst&rsquo;s typical day look like?</li>
+          <li>How much time would your solution save?</li>
+          <li>How does it eliminate the $200K&ndash;$300K consultant cost?</li>
+        </ul>
+        <p style="color:var(--text-muted);font-size:0.85rem;font-style:italic;margin-bottom:1rem;">If you can&rsquo;t answer these clearly, your agent won&rsquo;t either.</p>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Business Value Foundation (25 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Deep understanding of current manual invoice validation process</label></li>
+          <li><label><input type="checkbox"> Clear quantification of ~$100M+ revenue impact</label></li>
+          <li><label><input type="checkbox"> Documented $200K&ndash;$300K consultant cost structure</label></li>
+          <li><label><input type="checkbox"> Identified key user personas and their specific workflows</label></li>
+          <li><label><input type="checkbox"> Understood compliance and audit requirements</label></li>
+          <li><label><input type="checkbox"> Mapped current bottlenecks and inefficiencies</label></li>
+          <li><label><input type="checkbox"> Defined what success looks like (time savings, accuracy, insights)</label></li>
         </ul>
       </div>
 
+      <!-- ============================================================
+           STEP 2: Reconciliation Intelligence Validation
+           ============================================================ -->
       <div class="checklist-step">
-        <h3>Step 2: [EDIT: Add step title]</h3>
+        <h3>Step 2: Reconciliation Intelligence Validation</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 12 minutes</span>
+          <span>&#x1F9E0; Test whether your agent&rsquo;s reconciliation logic is accurate, explainable, and actionable</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2A &mdash; Document Processing Logic</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Invoices arrive as scanned PDFs with inconsistent layouts and also
+as structured Excel files. Some PDFs are corrupted, some Excel files
+have missing columns, and about 15% of all invoices have data quality
+issues. How are these handled during ingestion?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent describe specific PDF parsing approaches?</li>
+          <li>&#x2705; Does it explain Excel data extraction and validation?</li>
+          <li>&#x2705; Does it address the 15% data quality issue with fallback strategies?</li>
+          <li>&#x2705; Does it explain validation rules applied during ingestion?</li>
+          <li>&#x2705; Does it describe how corrupted or incomplete data is flagged?</li>
+          <li>&#x274C; Red flag: Vague response like &ldquo;we handle both formats&rdquo;</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2B &mdash; Agreement-Specific Rules</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Payer A has a 15% volume discount on Drug X for orders over 1,000 units.
+Payer B uses tiered pricing with different rates per 500-unit tier.
+Invoice from Payer A shows 1,200 units at full price ($50,000) but
+should be $42,500 with discount. Invoice from Payer B shows 2,500 units
+at $40,000 but tiered pricing should be $38,000. How are these
+discrepancies detected?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent calculate the correct expected amounts ($42,500 and $38,000)?</li>
+          <li>&#x2705; Does it identify both discrepancies ($7,500 and $2,000)?</li>
+          <li>&#x2705; Does it explain how payer-specific rules are applied?</li>
+          <li>&#x2705; Does it show understanding of volume discounts and tiered pricing?</li>
+          <li>&#x2705; Does it explain the detection logic step-by-step?</li>
+          <li>&#x274C; Red flag: Incorrect calculations or missing discrepancies</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2C &mdash; Discrepancy Classification</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Three invoices are flagged: Invoice #4521 shows $50,000 for Drug Y
+but agreement says $45,000 (pricing error). Invoice #4522 is missing
+3 line items that were shipped per records (missing items). Invoice
+#4523 includes a retroactive price adjustment from last quarter
+(legitimate variance). How are these classified and prioritized?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent distinguish between error types (pricing, missing items, adjustments)?</li>
+          <li>&#x2705; Does it classify the retroactive adjustment as legitimate, not an error?</li>
+          <li>&#x2705; Does it explain severity assessment for each type?</li>
+          <li>&#x2705; Does it describe prioritization logic?</li>
+          <li>&#x2705; Does it show understanding of what constitutes an error vs. variance?</li>
+          <li>&#x274C; Red flag: Treats all discrepancies the same or misclassifies the adjustment</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2D &mdash; Auditability</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Finance manager questions why Invoice #12345 was flagged for a $5,000
+discrepancy. The invoice shows $50,000 for Drug Y, the payer agreement
+specifies $45,000, and the calculation is $50,000 - $45,000 = $5,000.
+Provide the complete audit trail and explanation.</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent provide step-by-step reconciliation logic?</li>
+          <li>&#x2705; Does it show the data used (invoice amount, agreement terms)?</li>
+          <li>&#x2705; Does it show the calculation clearly?</li>
+          <li>&#x2705; Does it provide an audit trail (what was checked, in what order)?</li>
+          <li>&#x2705; Is the explanation clear enough for Finance to verify?</li>
+          <li>&#x274C; Red flag: Black box response that can&rsquo;t explain the decision</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Reconciliation Intelligence (20 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Handles both PDF and Excel formats with specific technical approaches</label></li>
+          <li><label><input type="checkbox"> Applies payer-specific agreement rules correctly (volume discounts, tiered pricing)</label></li>
+          <li><label><input type="checkbox"> Detects and classifies different discrepancy types accurately</label></li>
+          <li><label><input type="checkbox"> Distinguishes between errors and legitimate variances</label></li>
+          <li><label><input type="checkbox"> Provides clear, auditable explanations for reconciliation decisions</label></li>
+          <li><label><input type="checkbox"> Handles data quality issues (15% scenario) with fallback logic</label></li>
         </ul>
       </div>
 
+      <!-- ============================================================
+           STEP 3: Scalability & Global Readiness
+           ============================================================ -->
       <div class="checklist-step">
-        <h3>Step 3: [EDIT: Add step title]</h3>
+        <h3>Step 3: Scalability &amp; Global Readiness</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 8 minutes</span>
+          <span>&#x1F30D; Test whether your agent can scale beyond Canada</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3A &mdash; Multi-Market Adaptation</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>US payer structures differ from Canada. HMOs negotiate different
+discounts, PPOs use different fee schedules, Medicare has fixed rates,
+and Medicaid varies by state. How would the reconciliation rules
+adapt for these different US payer models?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent identify specific differences in US payer models?</li>
+          <li>&#x2705; Does it explain how reconciliation logic would adapt?</li>
+          <li>&#x2705; Does it address regulatory or compliance differences?</li>
+          <li>&#x2705; Does it show understanding of payer diversity?</li>
+          <li>&#x2705; Does it position the solution as adaptable, not Canada-specific?</li>
+          <li>&#x274C; Red flag: Generic response that doesn&rsquo;t address market-specific differences</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3B &mdash; Volume Scaling</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Currently processing 5,000 invoices per month in Canada. Scaling
+globally to 50,000 invoices per month across multiple markets.
+Processing time per invoice is currently 2 minutes. At 10x volume,
+what happens to performance and how is this managed?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent address performance considerations at scale?</li>
+          <li>&#x2705; Does it explain how processing time would scale?</li>
+          <li>&#x2705; Does it mention infrastructure or architectural changes?</li>
+          <li>&#x2705; Does it address data storage and retrieval optimization?</li>
+          <li>&#x2705; Does it demonstrate understanding of scalability challenges?</li>
+          <li>&#x274C; Red flag: No mention of performance or scaling considerations</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3C &mdash; Data Source Adaptability</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>In Canada we use ERP System X and have access to IQVIA data. In
+Australia, ERP System X isn't available and IQVIA data is limited.
+What alternative data sources could maintain reconciliation quality
+and how would accuracy be affected?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent identify alternative data sources?</li>
+          <li>&#x2705; Does it explain how reconciliation quality would be maintained?</li>
+          <li>&#x2705; Does it describe fallback strategies?</li>
+          <li>&#x2705; Does it acknowledge trade-offs honestly?</li>
+          <li>&#x2705; Does it show flexibility in the framework?</li>
+          <li>&#x274C; Red flag: Assumes data sources will always be available</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Scalability &amp; Reach (20 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Adapts reconciliation logic for different market payer structures</label></li>
+          <li><label><input type="checkbox"> Handles volume scaling (10x increase) without performance degradation</label></li>
+          <li><label><input type="checkbox"> Addresses multi-currency and regulatory compliance requirements</label></li>
+          <li><label><input type="checkbox"> Maintains reconciliation quality with alternative data sources</label></li>
+          <li><label><input type="checkbox"> Positions solution as a replicable global framework</label></li>
+          <li><label><input type="checkbox"> Provides market-specific recommendations without losing core logic</label></li>
         </ul>
       </div>
 
-      <p class="checklist-note">[GenAI prompts will be added here.]</p>
+      <!-- ============================================================
+           STEP 4: Production Readiness & Data Integrity
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 4: Production Readiness &amp; Data Integrity</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 8 minutes</span>
+          <span>&#x2699;&#xFE0F; Test whether your agent handles real-world operational challenges</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4A &mdash; Data Freshness</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Invoice data is updated daily from the ERP system. Payer agreement
+data is updated monthly. Today is March 15th and we're reconciling
+invoices from March 1-14. A payer changed their pricing on March 10th
+but the agreement data won't update until March 31st. How is this
+handled and what is the impact on reconciliation accuracy?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent acknowledge the data freshness issue?</li>
+          <li>&#x2705; Does it explain how stale agreement data impacts accuracy?</li>
+          <li>&#x2705; Does it describe mechanisms to prevent using outdated data?</li>
+          <li>&#x2705; Does it flag the March 10&ndash;14 invoices for manual review?</li>
+          <li>&#x2705; Does it communicate data freshness to users?</li>
+          <li>&#x274C; Red flag: No mention of data freshness or update cadence</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4B &mdash; Missing Data Handling</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>15% of invoices have incomplete data: missing line items (5%),
+unclear payer information (7%), corrupted files (3%). An invoice
+is missing 3 line items but we have shipping records showing they
+were delivered. Another invoice has no payer ID. How are these
+handled and what is the reconciliation outcome?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent acknowledge the 15% data quality issue?</li>
+          <li>&#x2705; Does it describe fallback strategies for each scenario?</li>
+          <li>&#x2705; Does it explain how reconciliation quality degrades gracefully?</li>
+          <li>&#x2705; Does it flag incomplete records for manual review?</li>
+          <li>&#x2705; Does it maintain transparency about data limitations?</li>
+          <li>&#x274C; Red flag: Assumes all data will be complete and clean</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4C &mdash; Compliance Guardrails</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Show the reconciliation history for Payer X invoices from Q3 2025.
+Include which invoices were flagged, why they were flagged, what
+data was used, who reviewed them, and what action was taken. What
+compliance requirements does this audit trail meet?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent provide a complete audit trail?</li>
+          <li>&#x2705; Does it explain data governance and security measures?</li>
+          <li>&#x2705; Does it demonstrate compliance awareness?</li>
+          <li>&#x2705; Does it show how data is protected and accessed?</li>
+          <li>&#x2705; Does it address regulatory requirements?</li>
+          <li>&#x274C; Red flag: No mention of compliance or data governance</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4D &mdash; Workflow Integration</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>A Finance analyst needs to: (1) see flagged invoices, (2) understand
+why they were flagged, (3) approve or dispute the flag, (4) export
+results to their ERP system. How does this workflow work without
+switching between multiple systems?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent describe integration with existing Finance tools?</li>
+          <li>&#x2705; Does it explain how findings are actioned (exported, flagged, escalated)?</li>
+          <li>&#x2705; Does it minimize context switching between systems?</li>
+          <li>&#x2705; Does it address adoption barriers?</li>
+          <li>&#x2705; Does it describe the user experience?</li>
+          <li>&#x274C; Red flag: No mention of workflow integration or user experience</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Production Readiness (15 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Acknowledges data freshness and specifies update cadence</label></li>
+          <li><label><input type="checkbox"> Handles missing or incomplete data (15% scenario) with fallback logic</label></li>
+          <li><label><input type="checkbox"> Demonstrates compliance and financial data governance awareness</label></li>
+          <li><label><input type="checkbox"> Connects recommendations to real Finance workflows and tools</label></li>
+          <li><label><input type="checkbox"> Provides clear audit trail for reconciliation decisions</label></li>
+          <li><label><input type="checkbox"> Responses are operationally actionable, not theoretical</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           STEP 5: Innovation & Technical Excellence
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 5: Innovation &amp; Technical Excellence</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 5 minutes</span>
+          <span>&#x1F6E0;&#xFE0F; Test the depth, adaptability, and intelligence of your agent</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5A &mdash; Adaptive Learning</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Over 6 months, 40% of flagged discrepancies turned out to be legitimate
+variances that should have been accepted. The pattern: invoices from
+Payer X with retroactive adjustments are being incorrectly flagged as
+errors. What does this tell you and how should the rules be adjusted?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent recognize the pattern in the feedback?</li>
+          <li>&#x2705; Does it suggest specific rule adjustments?</li>
+          <li>&#x2705; Does it explain how to validate improvements?</li>
+          <li>&#x2705; Does it demonstrate learning capability?</li>
+          <li>&#x2705; Does it propose a feedback loop for continuous improvement?</li>
+          <li>&#x274C; Red flag: Static response that doesn&rsquo;t adapt to feedback</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5B &mdash; Conversational Intelligence</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Show me all invoices from Payer X in Q3 where pricing doesn't match
+our agreement, calculate the total financial impact, identify which
+discrepancies are most likely to be disputed based on historical
+patterns, and recommend next steps.</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent handle a complex, multi-part query?</li>
+          <li>&#x2705; Does it filter by payer and time period correctly?</li>
+          <li>&#x2705; Does it calculate financial impact accurately?</li>
+          <li>&#x2705; Does it identify patterns in historical disputes?</li>
+          <li>&#x2705; Does it provide specific, actionable insights?</li>
+          <li>&#x274C; Red flag: Can only handle simple, single-part queries</li>
+        </ul>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5C &mdash; Predictive Capability</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Based on historical invoice patterns, Payer X submits invoices with
+discrepancies 60% of the time, Payer Y 20% of the time. Payer X's
+discrepancies average $15,000, Payer Y's average $2,000. Which payers
+are most likely to submit discrepancies next quarter and what should
+we do proactively?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>&#x2705; Does the agent identify patterns in historical data?</li>
+          <li>&#x2705; Does it make predictions based on those patterns?</li>
+          <li>&#x2705; Does it suggest proactive actions?</li>
+          <li>&#x2705; Does it explain the reasoning behind predictions?</li>
+          <li>&#x2705; Does it go beyond basic reconciliation to strategic insights?</li>
+          <li>&#x274C; Red flag: No predictive capability, only reactive reconciliation</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Technical Excellence (15 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Adapts reconciliation rules based on outcome feedback</label></li>
+          <li><label><input type="checkbox"> Handles complex multi-variable analytical queries intelligently</label></li>
+          <li><label><input type="checkbox"> Demonstrates predictive capability for proactive discrepancy identification</label></li>
+          <li><label><input type="checkbox"> Maintains response quality across varied query types</label></li>
+          <li><label><input type="checkbox"> Goes beyond simple rule matching &mdash; shows reasoning and intelligence</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           STEP 6: Demo & Storytelling Preparation
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 6: Demo &amp; Storytelling Preparation</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 2 minutes</span>
+          <span>&#x1F3A4; Create compelling presentation materials for your pitch</span>
+        </p>
+
+        <p class="step-section-label">&#x1F4CA; Create Your Pitch Deck with Concierge</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 6 &mdash; Hackathon Pitch Presentation</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Create a compelling hackathon pitch presentation for a Commercial
+Canada Invoice – Pricing - Revenue Reconciliation solution.
+
+Key details to include:
+- Problem: Manual validation of thousands of invoices annually
+  affecting ~$100M+ revenue, $200K–$300K external consultant costs,
+  days/weeks for insights, limited real-time visibility into
+  payer performance
+- Solution: "Talk to data" capability that automatically ingests,
+  validates, and analyzes invoices (PDF + Excel), applies
+  agreement-specific rules, and enables conversational queries
+  across historical data
+- Impact: Eliminates $200K–$300K consultant costs, accelerates
+  insights from days/weeks to minutes, improves revenue accuracy,
+  creates scalable global template
+- Users: Trade & Revenue Management, Market Access, PSP, Finance
+
+Create 8-10 slides covering: problem statement, solution overview,
+technical approach (PDF/Excel ingestion, rule engine, conversational AI),
+business impact, demo preview, scalability, implementation roadmap,
+and ask.
+
+Target audience: Hackathon judges evaluating business value (25pts),
+reconciliation intelligence (20pts), scalability (20pts), production
+readiness (15pts), technical excellence (15pts), storytelling (5pts).
+
+Make it visually engaging with clear value propositions, realistic
+business impact, and technical depth prominently featured.</pre>
+        </div>
+
+        <p class="step-section-label">&#x1F4BC; Strengthen Your Business Case with ValueLens</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.75rem;">ValueLens helps you create robust, credible, and compelling proposals that stand up in leadership conversations &mdash; no more inconsistent formats or unclear assumptions.</p>
+
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:0.4rem;"><strong style="color:var(--text-color);">Key ValueLens Capabilities for Your Hackathon:</strong></p>
+        <ul class="look-for-list" style="margin-bottom:1rem;">
+          <li><strong style="color:var(--text-color);">Business Case Foundation</strong> &mdash; Define the invoice reconciliation problem, solution scope, and revenue impact</li>
+          <li><strong style="color:var(--text-color);">Clear Stakeholder Mapping</strong> &mdash; Align Trade &amp; Revenue Management, Market Access, PSP, Finance, and Digital stakeholders</li>
+          <li><strong style="color:var(--text-color);">Delivery Confidence Intelligence</strong> &mdash; Flag operational and compliance risks and recommend mitigations before review</li>
+          <li><strong style="color:var(--text-color);">Executive Summary</strong> &mdash; Generate a professional PDF business case summary in seconds</li>
+        </ul>
+
+        <p style="color:var(--text-color);font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">How to Use ValueLens:</p>
+        <ol style="color:var(--text-muted);font-size:0.9rem;padding-left:1.5rem;margin-bottom:1rem;">
+          <li style="margin-bottom:0.4rem;">Access ValueLens through Concierge</li>
+          <li style="margin-bottom:0.4rem;">Input your invoice reconciliation solution details</li>
+          <li style="margin-bottom:0.4rem;">Map stakeholders across Trade &amp; Revenue Management, Finance, Market Access, PSP, and Digital teams</li>
+          <li style="margin-bottom:0.4rem;">Generate risk assessment covering data quality, compliance, and operational considerations</li>
+          <li style="margin-bottom:0.4rem;">Export executive summary for leadership and judge review</li>
+        </ol>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Storytelling &amp; Demo (5 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Clear before/after narrative for Commercial Canada teams</label></li>
+          <li><label><input type="checkbox"> Demo uses realistic invoice scenarios (PDF/Excel, rule application, discrepancy detection)</label></li>
+          <li><label><input type="checkbox"> Acknowledges data quality limitations and edge cases honestly</label></li>
+          <li><label><input type="checkbox"> Defines credible next steps and global deployment path</label></li>
+          <li><label><input type="checkbox"> Connects solution impact to strategic revenue management</label></li>
+          <li><label><input type="checkbox"> Pitch deck created using Concierge with compelling visuals</label></li>
+          <li><label><input type="checkbox"> Business case strengthened using ValueLens with stakeholder mapping and risk assessment</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           FINAL VERIFICATION SUMMARY
+           ============================================================ -->
+      <div class="checklist-step checklist-step--summary">
+        <h3>&#x1F3C6; Final Verification Summary</h3>
+
+        <p class="step-section-label">Scoring Checkpoint</p>
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th>Points</th>
+              <th>Self-Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business &amp; User Value</td>
+              <td>25</td>
+              <td>___&nbsp;/&nbsp;25</td>
+            </tr>
+            <tr>
+              <td>Reconciliation Intelligence &amp; Accuracy</td>
+              <td>20</td>
+              <td>___&nbsp;/&nbsp;20</td>
+            </tr>
+            <tr>
+              <td>Scalability &amp; Reach</td>
+              <td>20</td>
+              <td>___&nbsp;/&nbsp;20</td>
+            </tr>
+            <tr>
+              <td>Production Readiness &amp; Ownership</td>
+              <td>15</td>
+              <td>___&nbsp;/&nbsp;15</td>
+            </tr>
+            <tr>
+              <td>Technical Excellence &amp; Innovation</td>
+              <td>15</td>
+              <td>___&nbsp;/&nbsp;15</td>
+            </tr>
+            <tr>
+              <td>Storytelling &amp; Demo</td>
+              <td>5</td>
+              <td>___&nbsp;/&nbsp;5</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>TOTAL</td>
+              <td>100</td>
+              <td>___&nbsp;/&nbsp;100</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="step-section-label">Red Flag Check</p>
+        <ul class="flag-list">
+          <li>&#x274C; <strong>Avoid:</strong> Agent gives generic invoice processing advice without understanding Commercial Canada context</li>
+          <li>&#x274C; <strong>Avoid:</strong> Reconciliation logic is a black box &mdash; can&rsquo;t explain why discrepancies were flagged</li>
+          <li>&#x274C; <strong>Avoid:</strong> Incorrect calculations or missing discrepancies in test scenarios</li>
+          <li>&#x274C; <strong>Avoid:</strong> Agent fails on edge cases (corrupted data, partial payments, missing information)</li>
+        </ul>
+
+        <p class="step-section-label">Success Indicators</p>
+        <ul class="flag-list">
+          <li>&#x2705; <strong>Must Have:</strong> Agent handles both PDF and Excel formats with robust processing logic</li>
+          <li>&#x2705; <strong>Must Have:</strong> Applies payer-specific agreement rules correctly and calculates discrepancies accurately</li>
+          <li>&#x2705; <strong>Must Have:</strong> Provides auditable explanations for every reconciliation decision</li>
+          <li>&#x2705; <strong>Must Have:</strong> Handles edge cases and data quality issues intelligently</li>
+          <li>&#x2705; <strong>Presentation Ready:</strong> Professional pitch deck created with Concierge</li>
+          <li>&#x2705; <strong>Business Case Ready:</strong> Structured proposal developed with ValueLens</li>
+        </ul>
+      </div>
+
+      <p class="checklist-note">&#x1F4A1; <strong>Final Recommendation:</strong> Review your agent&rsquo;s responses against each checklist. Focus remaining development time on the lowest-scoring areas. Use Concierge to build your pitch deck and ValueLens to create a decision-ready business case with stakeholder mapping and operational risk assessment.<br><br>Ready to win? Your agent should turn manual invoice chaos into a strategic advantage &mdash; every invoice validated accurately, every insight generated in minutes, every dollar of the ~$100M+ revenue protected! &#x1F680;</p>
     </div>
   </section>
 
@@ -84,5 +613,16 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function copyPrompt(btn) {
+      const pre = btn.parentElement.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent.trim()).then(function () {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      });
+    }
+  </script>
 </body>
 </html>

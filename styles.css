@@ -433,6 +433,8 @@ p  { margin: 0 0 1em; }
   padding: 1.75rem;
   box-shadow: var(--shadow);
   transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
 }
 .problem-card:hover {
   transform: translateY(-2px);
@@ -447,7 +449,7 @@ p  { margin: 0 0 1em; }
   margin-bottom: 0.5rem;
 }
 .problem-card h3 { margin: 0 0 0.5rem; }
-.problem-card p  { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+.problem-card p  { color: var(--text-muted); margin: 0 0 0; font-size: 0.95rem; flex: 1; }
 .problem-card--purple {
   background: var(--brand-color);
   border-color: var(--brand-color);
@@ -510,6 +512,156 @@ p  { margin: 0 0 1em; }
   border-left: 3px solid var(--accent);
   padding-left: 1rem;
   margin-top: 2rem;
+}
+
+.step-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: -0.5rem 0 1.25rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.step-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.step-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-color);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.prompt-block {
+  background: #0d0d0d;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--brand-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.prompt-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  color: #e2e2e2;
+  line-height: 1.55;
+}
+
+.prompt-block .prompt-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.copy-btn:hover {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+}
+
+.look-for-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.look-for-list li {
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  position: relative;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.look-for-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--brand-color);
+  font-weight: 700;
+}
+
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.9rem;
+}
+
+.score-table th,
+.score-table td {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.score-table th {
+  background: #111;
+  color: var(--brand-color);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.score-table td:nth-child(2) {
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.score-table td:nth-child(3) {
+  color: var(--text-muted);
+  min-width: 80px;
+}
+
+.score-table tfoot td {
+  font-weight: 700;
+  color: var(--brand-color);
+  background: #111;
+}
+
+.flag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.flag-list li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.checklist-step--summary {
+  border-color: var(--brand-color);
 }
 
 /* ==========================================================

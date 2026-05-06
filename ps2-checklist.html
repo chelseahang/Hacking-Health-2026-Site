@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PS2 Checklist | Hacking Health Toronto 2026</title>
-  <meta name="description" content="Verification checklist for Problem Space 2: HCP Consent Prioritization." />
+  <meta name="description" content="Agent verification checklist for Problem Space 2: HCP Engagement &amp; Prioritization." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -38,42 +38,435 @@
   <section class="section">
     <div class="container container-narrow">
       <a href="problem-spaces.html" class="guide-back">&larr; Back to Problem Spaces</a>
-      <h2 class="section-title" style="text-align:left;margin-top:1.5rem;">02 &mdash; HCP Consent Prioritization for Concierge for Field (Jarvis)</h2>
-      <p class="section-subtitle" style="text-align:left;">Use this checklist to verify your agent is working as expected.</p>
+      <h2 class="section-title" style="text-align:left;margin-top:1.5rem;">HCP Engagement &amp; Prioritization</h2>
+      <p class="section-subtitle" style="text-align:left;margin-bottom:0.75rem;">&#x1F50D; Agent Verification Process</p>
+      <p class="section-subtitle" style="text-align:left;">Test your agent directly to validate it meets the judging criteria.</p>
+      <p style="color:var(--text-muted);margin-bottom:2rem;"><strong style="color:var(--text-color);">Total Time: ~45 minutes</strong> &nbsp;&bull;&nbsp; <strong style="color:var(--text-color);">Purpose:</strong> Test your agent directly to validate it meets the judging criteria</p>
+      <p style="color:var(--text-muted);margin-bottom:2rem;">Each step contains prompts to paste directly into your agent. The goal is to test whether your agent responds accurately, intelligently, and in line with the problem it was built to solve. Complete the checklists after each response to track your score.</p>
 
       <!-- ============================================================
-           EDIT: Add step titles and checklist items below.
-           Copy a checklist-step block to add more steps.
+           STEP 1: Business Impact Assessment
            ============================================================ -->
-
       <div class="checklist-step">
-        <h3>Step 1: [EDIT: Add step title]</h3>
+        <h3>Step 1: Business Impact Assessment</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 10 minutes</span>
+          <span>&#x1F3AF; Test whether your agent understands the business problem and can articulate value</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 1A &mdash; Problem Awareness Check</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Which HCPs in my territory have not yet given digital consent under CASL
+and why should I prioritize them over others?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 1B &mdash; ROI Articulation</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>How much time and resource am I currently wasting by reaching out to
+low-value non-consented HCPs? What would change if I focused only on
+high-priority targets?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 1C &mdash; User Relevance</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>I'm an MSL managing a portfolio of HCPs across Ontario. Which ones
+should I be visiting in person this month to maximize consent success?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>Does the agent identify non-consented HCPs accurately?</li>
+          <li>Does it connect prioritization to business outcomes (ROI, consent rates)?</li>
+          <li>Does it tailor recommendations to the user&rsquo;s role (rep vs. MSL)?</li>
+          <li>Does it reference CASL constraints and the &ldquo;one meaningful chance&rdquo; context?</li>
+          <li>Does it provide actionable, specific guidance rather than generic responses?</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Business Value (25 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Correctly identifies non-consented HCPs in context</label></li>
+          <li><label><input type="checkbox"> Articulates ROI impact of prioritized vs. undifferentiated outreach</label></li>
+          <li><label><input type="checkbox"> Tailors recommendations to specific user roles</label></li>
+          <li><label><input type="checkbox"> References CASL regulatory context appropriately</label></li>
+          <li><label><input type="checkbox"> Provides actionable, specific guidance rather than generic responses</label></li>
         </ul>
       </div>
 
+      <!-- ============================================================
+           STEP 2: Prioritization Intelligence Validation
+           ============================================================ -->
       <div class="checklist-step">
-        <h3>Step 2: [EDIT: Add step title]</h3>
+        <h3>Step 2: Prioritization Intelligence Validation</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 12 minutes</span>
+          <span>&#x1F9E0; Test whether your agent&rsquo;s scoring model is accurate, explainable, and actionable</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2A &mdash; Scoring Logic</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Show me the top 10 non-consented HCPs in my region ranked by priority.
+Why is each one ranked where they are?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2B &mdash; Data Integration Check</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Dr. Sarah Chen is a rheumatologist in Vancouver. She's in the top decile
+for prescriptions but has had no rep visits in the last 6 months.
+What priority tier is she and what consent strategy do you recommend?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2C &mdash; Tier Strategy Mapping</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Give me the recommended consent approach for a HIGH priority HCP
+versus a LOW priority HCP. How should my outreach differ?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 2D &mdash; Edge Case Handling</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>I have an HCP who was previously contacted for consent and declined.
+How does your prioritization handle this? Should I try again?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>Does the agent use both CRM engagement data AND IQVIA prescriber data in scoring?</li>
+          <li>Can it explain WHY an HCP is ranked HIGH/MED/LOW?</li>
+          <li>Does it recommend differentiated strategies per tier?</li>
+          <li>Does it handle edge cases (declined consent, no visit history) intelligently?</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Prioritization Intelligence (20 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Ranks HCPs using both CRM and IQVIA data sources</label></li>
+          <li><label><input type="checkbox"> Clearly explains scoring rationale for each HCP</label></li>
+          <li><label><input type="checkbox"> Assigns correct HIGH/MED/LOW tiers with defensible logic</label></li>
+          <li><label><input type="checkbox"> Recommends differentiated consent strategies per tier</label></li>
+          <li><label><input type="checkbox"> Handles edge cases (declined, no data, new HCP) appropriately</label></li>
+          <li><label><input type="checkbox"> Responses are specific, not generic</label></li>
         </ul>
       </div>
 
+      <!-- ============================================================
+           STEP 3: Scalability & Regulatory Adaptability
+           ============================================================ -->
       <div class="checklist-step">
-        <h3>Step 3: [EDIT: Add step title]</h3>
+        <h3>Step 3: Scalability &amp; Regulatory Adaptability</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 8 minutes</span>
+          <span>&#x1F30D; Test whether your agent can operate across markets and regulatory frameworks</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3A &mdash; Multi-Market Awareness</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>I'm expanding this consent prioritization approach to our team in France.
+What changes under GDPR compared to CASL? How does the prioritization
+strategy need to adapt?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3B &mdash; Cross-Therapeutic Flexibility</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>This tool was built for our immunology team. Can it work for our
+oncology field force? What would need to change in the prioritization
+model for a different therapeutic area?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 3C &mdash; Data Source Adaptability</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>In Australia, we don't have access to IQVIA data. What alternative
+data sources could be used to maintain prioritization quality?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>Does the agent demonstrate awareness of different regulatory frameworks?</li>
+          <li>Can it adapt recommendations for different therapeutic areas?</li>
+          <li>Does it handle data gaps intelligently with alternative approaches?</li>
+          <li>Does it position itself as a global template, not a Canada-only tool?</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Scalability &amp; Reach (20 points)</p>
         <ul class="checklist">
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
-          <li><label><input type="checkbox"> [EDIT: Add checklist item]</label></li>
+          <li><label><input type="checkbox"> Demonstrates awareness of CASL vs. GDPR vs. APAC regulations</label></li>
+          <li><label><input type="checkbox"> Adapts prioritization logic for different therapeutic areas</label></li>
+          <li><label><input type="checkbox"> Handles alternative data sources when IQVIA is unavailable</label></li>
+          <li><label><input type="checkbox"> Positions solution as a replicable global framework</label></li>
+          <li><label><input type="checkbox"> Provides market-specific recommendations without losing core logic</label></li>
         </ul>
       </div>
 
-      <p class="checklist-note">[GenAI prompts will be added here.]</p>
+      <!-- ============================================================
+           STEP 4: Production Readiness & Data Integrity
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 4: Production Readiness &amp; Data Integrity</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 8 minutes</span>
+          <span>&#x2699;&#xFE0F; Test whether your agent handles real-world data quality and operational challenges</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4A &mdash; Data Freshness</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>When was the CRM and IQVIA data last updated that you're using
+for prioritization? How does stale data affect my recommendations?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4B &mdash; Missing Data Handling</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>I have 50 HCPs in my territory with no CRM visit history and no
+IQVIA prescriber data. How do you prioritize them?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4C &mdash; Compliance Guardrails</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Can you show me the consent status and outreach history for
+Dr. James Park? What data are you using and how is it governed?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 4D &mdash; Workflow Integration</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>How does this tool fit into my daily workflow in Veeva CRM?
+Can I action these recommendations directly from the prioritization list?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>Does the agent acknowledge data freshness and its impact?</li>
+          <li>Does it handle missing data gracefully with fallback logic?</li>
+          <li>Does it demonstrate compliance awareness around data usage?</li>
+          <li>Does it connect to real field workflows (Veeva, Jarvis)?</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Production Readiness (15 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Acknowledges data freshness and update cadence</label></li>
+          <li><label><input type="checkbox"> Handles missing or incomplete data with fallback logic</label></li>
+          <li><label><input type="checkbox"> Demonstrates compliance and data governance awareness</label></li>
+          <li><label><input type="checkbox"> Connects recommendations to real field workflows</label></li>
+          <li><label><input type="checkbox"> Provides clear audit trail for prioritization decisions</label></li>
+          <li><label><input type="checkbox"> Responses are operationally actionable, not theoretical</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           STEP 5: Innovation & Technical Excellence
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 5: Innovation &amp; Technical Excellence</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 5 minutes</span>
+          <span>&#x1F6E0;&#xFE0F; Test the depth, adaptability, and intelligence of your agent</span>
+        </p>
+
+        <p class="step-section-label">Prompts to test</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5A &mdash; Adaptive Learning</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Over the last quarter, my HIGH priority HCPs had a 40% consent success
+rate but my MED priority HCPs had a 60% success rate. What does this
+tell you and how should the scoring model be adjusted?</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5B &mdash; Conversational Intelligence</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>I have 3 hours free next Tuesday. Build me an optimized visit schedule
+for consent outreach in the Toronto downtown core, prioritizing
+HIGH tier HCPs first.</pre>
+        </div>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 5C &mdash; Predictive Capability</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Based on current engagement trends, which 5 HCPs in my territory
+are most likely to give consent if approached in the next 30 days?</pre>
+        </div>
+
+        <p class="step-section-label">What to look for</p>
+        <ul class="look-for-list">
+          <li>Does the agent learn from and adapt to outcome data?</li>
+          <li>Can it handle complex, multi-variable requests intelligently?</li>
+          <li>Does it demonstrate predictive capability beyond simple scoring?</li>
+          <li>Is the response quality consistent across different query types?</li>
+        </ul>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Technical Excellence (15 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Adapts scoring model based on outcome feedback</label></li>
+          <li><label><input type="checkbox"> Handles complex multi-variable scheduling requests</label></li>
+          <li><label><input type="checkbox"> Demonstrates predictive capability for consent likelihood</label></li>
+          <li><label><input type="checkbox"> Maintains response quality across varied query types</label></li>
+          <li><label><input type="checkbox"> Goes beyond simple lookup &mdash; shows reasoning and intelligence</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           STEP 6: Demo & Storytelling Preparation
+           ============================================================ -->
+      <div class="checklist-step">
+        <h3>Step 6: Demo &amp; Storytelling Preparation</h3>
+        <p class="step-meta">
+          <span>&#x23F1; 2 minutes</span>
+          <span>&#x1F3A4; Create compelling presentation materials for your pitch</span>
+        </p>
+
+        <p class="step-section-label">&#x1F4CA; Create Your Pitch Deck with Concierge</p>
+
+        <div class="prompt-block">
+          <span class="prompt-label">Prompt 6 &mdash; Hackathon Pitch Presentation</span>
+          <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+          <pre>Create a compelling hackathon pitch presentation for an HCP Consent
+Prioritization solution for Concierge for Field (Jarvis) in Canada.
+
+Key details to include:
+- Problem: CASL "one meaningful chance" constraint, thousands of
+  non-consented HCPs, undifferentiated outreach wasting field force time
+- Solution: Data-driven prioritization engine using CRM engagement
+  + IQVIA sales data to classify HCPs into HIGH/MED/LOW tiers
+  with tailored consent strategies
+- Impact: Improved consent success rates, field force ROI,
+  strategic resource allocation
+- Scale: Global template for Canada, EU, Australia, Asia
+
+Create 8-10 slides covering: problem statement, solution overview,
+scoring model, business impact, demo preview, scalability,
+implementation roadmap, and ask.
+
+Target audience: Hackathon judges evaluating business value (25pts),
+prioritization intelligence (20pts), scalability (20pts), production
+readiness (15pts), technical excellence (15pts), storytelling (5pts).
+
+Make it visually engaging with clear value propositions and
+compliance considerations prominently featured.</pre>
+        </div>
+
+        <p class="step-section-label">&#x1F4BC; Strengthen Your Business Case with ValueLens</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:0.75rem;">ValueLens helps you create robust, credible, and compelling proposals that stand up in leadership conversations &mdash; no more inconsistent formats or unclear assumptions.</p>
+        <ul class="look-for-list">
+          <li><strong style="color:var(--text-color);">Business Case Foundation</strong> &mdash; Define the CASL consent problem, solution scope, and field force impact</li>
+          <li><strong style="color:var(--text-color);">Clear Stakeholder Mapping</strong> &mdash; Align Commercial, Field, Legal/Compliance, and Digital stakeholders</li>
+          <li><strong style="color:var(--text-color);">Delivery Confidence Intelligence</strong> &mdash; Flag regulatory risks and recommend mitigations before review</li>
+          <li><strong style="color:var(--text-color);">Executive Summary</strong> &mdash; Generate a professional PDF business case summary in seconds</li>
+        </ul>
+        <p style="color:var(--text-color);font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">How to Use ValueLens:</p>
+        <ol style="color:var(--text-muted);font-size:0.9rem;padding-left:1.5rem;margin-bottom:1rem;">
+          <li style="margin-bottom:0.4rem;">Access ValueLens through Concierge</li>
+          <li style="margin-bottom:0.4rem;">Input your HCP consent prioritization solution details</li>
+          <li style="margin-bottom:0.4rem;">Map stakeholders across Commercial, Field, Legal/Compliance, and Digital teams</li>
+          <li style="margin-bottom:0.4rem;">Generate risk assessment covering CASL, PIPEDA, and data privacy considerations</li>
+          <li style="margin-bottom:0.4rem;">Export executive summary for leadership and judge review</li>
+        </ol>
+
+        <p class="step-section-label">&#x2705; Checklist &mdash; Storytelling &amp; Demo (5 points)</p>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Clear before/after narrative for commercial teams under CASL constraints</label></li>
+          <li><label><input type="checkbox"> Demo uses realistic HCP scenarios across all three priority tiers</label></li>
+          <li><label><input type="checkbox"> Acknowledges CASL limitations and regulatory considerations honestly</label></li>
+          <li><label><input type="checkbox"> Defines credible next steps and global deployment path</label></li>
+          <li><label><input type="checkbox"> Connects solution impact to field force effectiveness and patient outcomes</label></li>
+          <li><label><input type="checkbox"> Pitch deck created using Concierge with compelling visuals</label></li>
+          <li><label><input type="checkbox"> Business case strengthened using ValueLens with compliance risk assessment</label></li>
+        </ul>
+      </div>
+
+      <!-- ============================================================
+           FINAL VERIFICATION SUMMARY
+           ============================================================ -->
+      <div class="checklist-step checklist-step--summary">
+        <h3>&#x1F3C6; Final Verification Summary</h3>
+
+        <p class="step-section-label">Scoring Checkpoint</p>
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th>Points</th>
+              <th>Self-Assessment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business &amp; User Value</td>
+              <td>25</td>
+              <td>___&nbsp;/&nbsp;25</td>
+            </tr>
+            <tr>
+              <td>Prioritization Intelligence &amp; Accuracy</td>
+              <td>20</td>
+              <td>___&nbsp;/&nbsp;20</td>
+            </tr>
+            <tr>
+              <td>Scalability &amp; Reach</td>
+              <td>20</td>
+              <td>___&nbsp;/&nbsp;20</td>
+            </tr>
+            <tr>
+              <td>Production Readiness &amp; Ownership</td>
+              <td>15</td>
+              <td>___&nbsp;/&nbsp;15</td>
+            </tr>
+            <tr>
+              <td>Technical Excellence &amp; Innovation</td>
+              <td>15</td>
+              <td>___&nbsp;/&nbsp;15</td>
+            </tr>
+            <tr>
+              <td>Storytelling &amp; Demo</td>
+              <td>5</td>
+              <td>___&nbsp;/&nbsp;5</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>TOTAL</td>
+              <td>100</td>
+              <td>___&nbsp;/&nbsp;100</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="step-section-label">Red Flag Check</p>
+        <ul class="flag-list">
+          <li>&#x274C; <strong>Avoid:</strong> Agent ignores CASL context or gives generic consent advice</li>
+          <li>&#x274C; <strong>Avoid:</strong> Scoring logic is a black box &mdash; agent can&rsquo;t explain why an HCP is HIGH/MED/LOW</li>
+          <li>&#x274C; <strong>Avoid:</strong> No differentiation between consent strategies per tier</li>
+          <li>&#x274C; <strong>Avoid:</strong> Agent fails on missing data or edge cases</li>
+        </ul>
+
+        <p class="step-section-label">Success Indicators</p>
+        <ul class="flag-list">
+          <li>&#x2705; <strong>Must Have:</strong> Agent ranks HCPs using both CRM and IQVIA data</li>
+          <li>&#x2705; <strong>Must Have:</strong> Agent explains prioritization logic clearly</li>
+          <li>&#x2705; <strong>Must Have:</strong> Agent recommends differentiated strategies per tier</li>
+          <li>&#x2705; <strong>Must Have:</strong> Agent handles real-world data gaps and edge cases</li>
+          <li>&#x2705; <strong>Presentation Ready:</strong> Professional pitch deck created with Concierge</li>
+          <li>&#x2705; <strong>Business Case Ready:</strong> Structured proposal developed with ValueLens</li>
+        </ul>
+      </div>
+
+      <p class="checklist-note">&#x1F4A1; <strong>Final Recommendation:</strong> Review your agent&rsquo;s responses against each checklist. Focus remaining development time on the lowest-scoring areas. Use Concierge to build your pitch deck and ValueLens to create a decision-ready business case with stakeholder mapping and regulatory risk assessment.<br><br>Ready to win? Your agent should turn CASL&rsquo;s &ldquo;one meaningful chance&rdquo; into a strategic advantage &mdash; every consent opportunity backed by data, every field visit optimized for impact! &#x1F680;</p>
     </div>
   </section>
 
@@ -84,5 +477,16 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    function copyPrompt(btn) {
+      const pre = btn.parentElement.querySelector('pre');
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent.trim()).then(function () {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      });
+    }
+  </script>
 </body>
 </html>
