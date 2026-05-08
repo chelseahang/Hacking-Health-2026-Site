@@ -217,18 +217,59 @@ p  { margin: 0 0 1em; }
 .hero {
   background: var(--hero-bg);
   color: var(--hero-text);
-  padding: 6rem 1.25rem;
+  padding: 2rem 1.25rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero-content {
   max-width: 760px;
   margin: 0 auto;
 }
+.hero-img-wrap {
+  position: relative;
+  display: inline-block;
+  width: min(780px, 95vw);
+  margin: 0 auto 1.5rem;
+}
 .hero-brand-img {
   display: block;
-  margin: 1.5rem auto 0;
-  width: min(420px, 80vw);
+  width: 100%;
   border-radius: 12px;
+  mix-blend-mode: screen;
+}
+.hero-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+.hero-img-overlay .eyebrow {
+  margin-bottom: 0.25rem;
+}
+.hero-img-overlay h1 {
+  margin: 0;
+}
+.hero-img-cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
 }
 .eyebrow {
   text-transform: uppercase;

@@ -21,14 +21,6 @@
         <a href="people.html">People</a>
         <a href="problem-spaces.html">Problem Spaces</a>
         <a href="teams.html">Teams</a>
-        <li class="nav-dropdown">
-          <button class="nav-dropdown-btn" aria-expanded="false">Guides <span class="nav-arrow">&#9660;</span></button>
-          <ul class="nav-dropdown-menu">
-            <li><a href="guides.html">Overview</a></li>
-            <li><a href="participants-guide.html">Participants' Guide</a></li>
-            <li><a href="judges-guide.html">Judges' Guide</a></li>
-          </ul>
-        </li>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -55,11 +47,6 @@
 
   <!-- ============================================================
        SPEAKERS
-       EDIT: To replace a placeholder photo, drop the image file
-       into assets/ and change the <div class="speaker-photo"> to:
-         <div class="speaker-photo speaker-photo--img">
-           <img src="assets/your-file.png" alt="Name" />
-         </div>
        ============================================================ -->
   <section id="speakers" class="guide-section">
     <div class="container">
@@ -200,4 +187,16 @@
       function onScroll() {
         var scrollY = window.scrollY + 140;
         var current = '';
-        sections.forEach(function (
+        sections.forEach(function (sec) {
+          if (sec.offsetTop <= scrollY) current = sec.id;
+        });
+        tabs.forEach(function (tab) {
+          tab.classList.toggle('active', tab.getAttribute('href') === '#' + current);
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
