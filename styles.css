@@ -1492,3 +1492,6 @@ details.checklist-step[open] {
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
+.section {
+  padding: 2rem 0;
+}
