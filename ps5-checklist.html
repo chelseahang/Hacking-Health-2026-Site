@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,6 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Dropdown / Accordion ── */
     .checklist-step {
       border: 1px solid rgba(124, 58, 237, 0.25);
       border-radius: 12px;
@@ -17,7 +15,6 @@
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-
     .checklist-step-header {
       display: flex;
       align-items: center;
@@ -29,519 +26,196 @@
       gap: 1rem;
       transition: background 0.2s;
     }
-
-    .checklist-step-header:hover {
-      background: rgba(124, 58, 237, 0.08);
-    }
-
+    .checklist-step-header:hover { background: rgba(124, 58, 237, 0.08); }
     .checklist-step-header.open {
       background: rgba(124, 58, 237, 0.15);
       border-bottom: 1px solid rgba(124, 58, 237, 0.25);
     }
-
-    .step-header-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
+    .step-header-left { display: flex; align-items: center; gap: 1rem; }
     .step-badge {
-      background: #7c3aed;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.65rem;
-      border-radius: 20px;
-      white-space: nowrap;
+      background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700;
+      padding: 0.25rem 0.65rem; border-radius: 20px; white-space: nowrap;
     }
+    .step-title { font-size: 1.05rem; font-weight: 600; color: #e2e8f0; margin: 0; }
+    .step-meta { font-size: 0.82rem; color: #94a3b8; margin-top: 0.15rem; }
+    .step-chevron { width: 22px; height: 22px; flex-shrink: 0; color: #a78bfa; transition: transform 0.3s; }
+    .checklist-step-header.open .step-chevron { transform: rotate(180deg); }
+    .checklist-step-body { display: none; padding: 1.75rem 1.75rem 2rem; }
+    .checklist-step-body.open { display: block; }
 
-    .step-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #e2e8f0;
-      margin: 0;
-    }
-
-    .step-meta {
-      font-size: 0.82rem;
-      color: #94a3b8;
-      margin-top: 0.15rem;
-    }
-
-    .step-chevron {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-      color: #a78bfa;
-      transition: transform 0.3s;
-    }
-
-    .checklist-step-header.open .step-chevron {
-      transform: rotate(180deg);
-    }
-
-    .checklist-step-body {
-      display: none;
-      padding: 1.75rem 1.75rem 2rem;
-      background: transparent;
-    }
-
-    .checklist-step-body.open {
-      display: block;
-    }
-
-    /* ── Content Styles ── */
     .purpose-banner {
-      background: rgba(124, 58, 237, 0.15);
-      border-left: 4px solid #7c3aed;
-      border-radius: 0 8px 8px 0;
-      padding: 0.85rem 1.1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.92rem;
-      color: #c4b5fd;
+      background: rgba(124, 58, 237, 0.15); border-left: 4px solid #7c3aed;
+      border-radius: 0 8px 8px 0; padding: 0.85rem 1.1rem; margin-bottom: 1.5rem;
+      font-size: 0.92rem; color: #c4b5fd;
     }
-
     .purpose-banner strong {
-      display: block;
-      margin-bottom: 0.2rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #a78bfa;
+      display: block; margin-bottom: 0.2rem; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.05em; color: #a78bfa;
     }
-
     .prompt-block {
-      background: #0f172a;
-      border-radius: 10px;
-      padding: 1.25rem 1.4rem;
-      margin: 1.25rem 0;
-      position: relative;
-      border: 1px solid rgba(124, 58, 237, 0.2);
+      background: #0f172a; border-radius: 10px; padding: 1.25rem 1.4rem;
+      margin: 1.25rem 0; position: relative; border: 1px solid rgba(124, 58, 237, 0.2);
     }
-
     .prompt-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #94a3b8;
-      margin-bottom: 0.6rem;
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #94a3b8; margin-bottom: 0.6rem;
     }
-
     .prompt-block pre {
-      color: #e2e8f0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.88rem;
-      line-height: 1.65;
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin: 0;
+      color: #e2e8f0; font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88rem; line-height: 1.65; white-space: pre-wrap;
+      word-break: break-word; margin: 0;
     }
-
     .look-for-block {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(100, 116, 139, 0.3);
-      border-radius: 10px;
-      padding: 1.1rem 1.3rem;
-      margin: 1rem 0 1.5rem;
+      background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(100, 116, 139, 0.3);
+      border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1rem 0 1.5rem;
     }
-
     .look-for-block h5 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #94a3b8;
-      margin: 0 0 0.75rem;
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #94a3b8; margin: 0 0 0.75rem;
     }
-
-    .look-for-block ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
+    .look-for-block ul { list-style: none; padding: 0; margin: 0; }
     .look-for-block ul li {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      padding: 0.3rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      line-height: 1.5;
+      font-size: 0.9rem; color: #cbd5e1; padding: 0.3rem 0;
+      display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5;
     }
-
     .look-for-block ul li.green::before { content: "✅"; flex-shrink: 0; }
     .look-for-block ul li.red::before   { content: "❌"; flex-shrink: 0; }
 
     .checklist-box {
-      background: rgba(21, 128, 61, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.25);
-      border-radius: 10px;
-      padding: 1.25rem 1.4rem;
-      margin-top: 1.5rem;
+      background: rgba(21, 128, 61, 0.12); border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 10px; padding: 1.25rem 1.4rem; margin-top: 1.5rem;
     }
-
     .checklist-box h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #4ade80;
-      margin: 0 0 1rem;
+      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #4ade80; margin: 0 0 1rem;
     }
-
-    .checklist-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .checklist-box ul { list-style: none; padding: 0; margin: 0; }
+    .checklist-box ul li { font-size: 0.9rem; color: #86efac; padding: 0.35rem 0; line-height: 1.5; }
+    .checklist-box ul li label {
+      display: flex; align-items: flex-start; gap: 0.6rem; cursor: pointer;
     }
-
-    .checklist-box ul li {
-      font-size: 0.9rem;
-      color: #86efac;
-      padding: 0.35rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      line-height: 1.5;
+    .checklist-box ul li input[type="checkbox"] {
+      flex-shrink: 0; margin-top: 0.2rem; width: 1rem; height: 1rem;
+      accent-color: #4ade80; cursor: pointer;
     }
-
-    .checklist-box ul li::before {
-      content: "☐";
-      flex-shrink: 0;
-      font-size: 1rem;
-      color: #4ade80;
+    .checklist-box ul li label:has(input:checked) {
+      text-decoration: line-through; opacity: 0.55;
     }
 
     .self-assess-block {
-      background: rgba(120, 53, 15, 0.2);
-      border: 1px solid rgba(251, 191, 36, 0.25);
-      border-radius: 10px;
-      padding: 1.1rem 1.3rem;
-      margin: 1rem 0 1.5rem;
+      background: rgba(120, 53, 15, 0.2); border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1rem 0 1.5rem;
     }
-
     .self-assess-block h5 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #fbbf24;
-      margin: 0 0 0.75rem;
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #fbbf24; margin: 0 0 0.75rem;
     }
-
-    .self-assess-block ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
+    .self-assess-block ul { list-style: none; padding: 0; margin: 0; }
     .self-assess-block ul li {
-      font-size: 0.9rem;
-      color: #fde68a;
-      padding: 0.3rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      line-height: 1.5;
+      font-size: 0.9rem; color: #fde68a; padding: 0.3rem 0;
+      display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5;
     }
-
-    .self-assess-block ul li::before {
-      content: "☐";
-      flex-shrink: 0;
-      color: #f59e0b;
-    }
-
+    .self-assess-block ul li::before { content: "☐"; flex-shrink: 0; color: #f59e0b; }
     .self-assess-block .warning-note {
-      margin-top: 0.75rem;
-      font-size: 0.85rem;
-      color: #fbbf24;
-      font-style: italic;
-      border-top: 1px solid rgba(251, 191, 36, 0.25);
-      padding-top: 0.65rem;
+      margin-top: 0.75rem; font-size: 0.85rem; color: #fbbf24; font-style: italic;
+      border-top: 1px solid rgba(251, 191, 36, 0.25); padding-top: 0.65rem;
     }
-
     .research-block {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(100, 116, 139, 0.3);
-      border-radius: 10px;
-      padding: 1.1rem 1.3rem;
-      margin-bottom: 1.25rem;
+      background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(100, 116, 139, 0.3);
+      border-radius: 10px; padding: 1.1rem 1.3rem; margin-bottom: 1.25rem;
     }
-
     .research-block h5 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #94a3b8;
-      margin: 0 0 0.75rem;
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: #94a3b8; margin: 0 0 0.75rem;
     }
-
-    .research-block ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
+    .research-block ul { list-style: none; padding: 0; margin: 0; }
     .research-block ul li {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      padding: 0.3rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      line-height: 1.5;
+      font-size: 0.9rem; color: #cbd5e1; padding: 0.3rem 0;
+      display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.5;
     }
-
-    .research-block ul li::before {
-      content: "→";
-      flex-shrink: 0;
-      color: #a78bfa;
-    }
-
+    .research-block ul li::before { content: "→"; flex-shrink: 0; color: #a78bfa; }
     .sub-section-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #e2e8f0;
-      margin: 1.75rem 0 0.75rem;
-      padding-bottom: 0.4rem;
+      font-size: 0.95rem; font-weight: 700; color: #e2e8f0;
+      margin: 1.75rem 0 0.75rem; padding-bottom: 0.4rem;
       border-bottom: 2px solid rgba(124, 58, 237, 0.3);
     }
-
     .valuelens-block {
-      background: rgba(109, 40, 217, 0.15);
-      border: 1px solid rgba(167, 139, 250, 0.3);
-      border-radius: 10px;
-      padding: 1.25rem 1.4rem;
-      margin: 1.25rem 0;
+      background: rgba(109, 40, 217, 0.15); border: 1px solid rgba(167, 139, 250, 0.3);
+      border-radius: 10px; padding: 1.25rem 1.4rem; margin: 1.25rem 0;
     }
+    .valuelens-block h5 { font-size: 0.85rem; font-weight: 700; color: #c4b5fd; margin: 0 0 0.6rem; }
+    .valuelens-block p { font-size: 0.9rem; color: #ddd6fe; margin: 0 0 0.75rem; line-height: 1.6; }
+    .valuelens-block ol { padding-left: 1.2rem; margin: 0; }
+    .valuelens-block ol li { font-size: 0.9rem; color: #ddd6fe; padding: 0.25rem 0; line-height: 1.5; }
 
-    .valuelens-block h5 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #c4b5fd;
-      margin: 0 0 0.6rem;
-    }
-
-    .valuelens-block p {
-      font-size: 0.9rem;
-      color: #ddd6fe;
-      margin: 0 0 0.75rem;
-      line-height: 1.6;
-    }
-
-    .valuelens-block ol {
-      padding-left: 1.2rem;
-      margin: 0;
-    }
-
-    .valuelens-block ol li {
-      font-size: 0.9rem;
-      color: #ddd6fe;
-      padding: 0.25rem 0;
-      line-height: 1.5;
-    }
-
-    /* ── Scoring Table ── */
-    .scoring-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.25rem 0;
-      font-size: 0.9rem;
-    }
-
+    .scoring-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
     .scoring-table th {
-      background: #7c3aed;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-weight: 600;
+      background: #7c3aed; color: #fff; padding: 0.75rem 1rem;
+      text-align: left; font-weight: 600;
     }
-
-    .scoring-table th:last-child,
-    .scoring-table td:last-child {
-      text-align: center;
-    }
-
+    .scoring-table th:last-child, .scoring-table td:last-child { text-align: center; }
     .scoring-table td {
-      padding: 0.7rem 1rem;
-      border-bottom: 1px solid rgba(100, 116, 139, 0.2);
-      color: #cbd5e1;
+      padding: 0.7rem 1rem; border-bottom: 1px solid rgba(100, 116, 139, 0.2); color: #cbd5e1;
     }
-
     .scoring-table tr:last-child td {
-      font-weight: 700;
-      background: rgba(124, 58, 237, 0.2);
-      color: #e2e8f0;
+      font-weight: 700; background: rgba(124, 58, 237, 0.2); color: #e2e8f0;
     }
+    .scoring-table tr:nth-child(even) td { background: rgba(15, 23, 42, 0.4); }
 
-    .scoring-table tr:nth-child(even) td {
-      background: rgba(15, 23, 42, 0.4);
-    }
-
-    /* ── Final Summary ── */
     .final-summary {
       background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-      border-radius: 14px;
-      padding: 2rem;
-      color: #fff;
-      margin-top: 2rem;
+      border-radius: 14px; padding: 2rem; color: #fff; margin-top: 2rem;
     }
-
-    .final-summary h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 0 0 1.25rem;
-      color: #fff;
-    }
-
-    .flag-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 640px) {
-      .flag-grid { grid-template-columns: 1fr; }
-    }
-
-    .flag-card {
-      background: rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
-    }
-
+    .final-summary h3 { font-size: 1.2rem; font-weight: 700; margin: 0 0 1.25rem; color: #fff; }
+    .flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    @media (max-width: 640px) { .flag-grid { grid-template-columns: 1fr; } }
+    .flag-card { background: rgba(255,255,255,0.12); border-radius: 10px; padding: 1rem 1.1rem; }
     .flag-card h4 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin: 0 0 0.6rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; margin: 0 0 0.6rem; color: rgba(255,255,255,0.8);
     }
-
-    .flag-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .flag-card ul li {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.92);
-      padding: 0.3rem 0;
-      line-height: 1.5;
-    }
-
+    .flag-card ul { list-style: none; padding: 0; margin: 0; }
+    .flag-card ul li { font-size: 0.88rem; color: rgba(255,255,255,0.92); padding: 0.3rem 0; line-height: 1.5; }
     .final-rec {
-      background: rgba(255,255,255,0.15);
-      border-radius: 10px;
-      padding: 1.1rem 1.3rem;
-      margin-top: 1.25rem;
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.95);
-      line-height: 1.65;
+      background: rgba(255,255,255,0.15); border-radius: 10px; padding: 1.1rem 1.3rem;
+      margin-top: 1.25rem; font-size: 0.92rem; color: rgba(255,255,255,0.95); line-height: 1.65;
     }
 
-    /* ── Page Header ── */
     .ps-hero {
       background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
-      padding: 3.5rem 0 2.5rem;
-      color: #fff;
+      padding: 3.5rem 0 2.5rem; color: #fff;
     }
-
-    .ps-hero-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
+    .ps-hero-inner { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
     .ps-hero-eyebrow {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 0.6rem;
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 0.6rem;
     }
-
     .ps-hero h1 {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 800;
-      margin: 0 0 0.75rem;
-      color: #fff;
-      line-height: 1.25;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800;
+      margin: 0 0 0.75rem; color: #fff; line-height: 1.25;
     }
-
     .ps-hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 1.25rem;
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-bottom: 1.25rem;
     }
-
-    .ps-hero-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .ps-hero p {
-      font-size: 0.97rem;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.65;
-      max-width: 680px;
-      margin: 0;
-    }
-
+    .ps-hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .ps-hero p { font-size: 0.97rem; color: rgba(255,255,255,0.88); line-height: 1.65; max-width: 680px; margin: 0; }
     .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      margin-bottom: 1.25rem;
-      transition: color 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.75);
+      text-decoration: none; margin-bottom: 1.25rem; transition: color 0.2s;
     }
-
     .back-link:hover { color: #fff; }
-
-    /* ── Main Content ── */
-    .checklist-container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-
+    .checklist-container { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
     .process-overview {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(100, 116, 139, 0.3);
-      border-radius: 12px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 2rem;
+      background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(100, 116, 139, 0.3);
+      border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 2rem;
     }
-
     .process-overview h3 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #94a3b8;
-      margin: 0 0 0.6rem;
+      font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #94a3b8; margin: 0 0 0.6rem;
     }
-
-    .process-overview p {
-      font-size: 0.92rem;
-      color: #94a3b8;
-      line-height: 1.65;
-      margin: 0;
-    }
+    .process-overview p { font-size: 0.92rem; color: #94a3b8; line-height: 1.65; margin: 0; }
   </style>
 </head>
 <body>
@@ -554,15 +228,13 @@
         <img src="assets/snowflake-logo.png" alt="Snowflake" class="nav-logo nav-logo--snowflake" />
       </a>
       <a href="index.html" class="nav-brand">Hacking Health Toronto</a>
-
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="people.html">People</a>
-        <a href="problem-spaces.html">Problem Spaces</a>
+        <a href="problem-spaces.html" class="active">Problem Spaces</a>
         <a href="teams.html">Teams</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
@@ -570,7 +242,6 @@
     </div>
   </header>
 
-  <!-- ── Hero ── -->
   <div class="ps-hero">
     <div class="ps-hero-inner">
       <a href="problem-spaces.html" class="back-link">&#8592; Back to Problem Spaces</a>
@@ -585,7 +256,6 @@
     </div>
   </div>
 
-  <!-- ── Main Content ── -->
   <div class="checklist-container">
 
     <div class="process-overview">
@@ -593,9 +263,7 @@
       <p>Each step contains prompts to paste directly into your agent. The goal is to test whether your agent responds accurately, intelligently, and in line with the problem it was built to solve. Complete the checklists after each response to track your score.</p>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 1
-    ══════════════════════════════════════════ -->
+    <!-- STEP 1 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -605,17 +273,10 @@
             <div class="step-meta">⏱ 10 minutes &nbsp;·&nbsp; 25 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
-
-        <div class="purpose-banner">
-          <strong>🎯 Purpose</strong>
-          Validate your understanding of the business problem before testing your agent.
-        </div>
-
+        <div class="purpose-banner"><strong>🎯 Purpose</strong>Validate your understanding of the business problem before testing your agent.</div>
         <div class="research-block">
           <h5>Research &amp; Resources — Review Before Testing</h5>
           <ul>
@@ -626,7 +287,6 @@
             <li>Revenue impact of stockouts and oversupply events</li>
           </ul>
         </div>
-
         <div class="self-assess-block">
           <h5>Self-Assessment — Can You Answer These Clearly?</h5>
           <ul>
@@ -638,24 +298,20 @@
           </ul>
           <div class="warning-note">⚠️ If you can't answer these clearly, your agent won't either.</div>
         </div>
-
         <div class="checklist-box">
           <h4>✅ Checklist — Business Value Foundation (25 points)</h4>
           <ul>
-            <li>Deep understanding of current data fragmentation across distribution network</li>
-            <li>Clear articulation of blind spots during product launches</li>
-            <li>Identified key user personas (commercial, supply chain, brand teams)</li>
-            <li>Understood the cost of reactive vs. proactive decision-making</li>
-            <li>Defined what "real-time visibility" means in operational terms</li>
+            <li><label><input type="checkbox"> Deep understanding of current data fragmentation across distribution network</label></li>
+            <li><label><input type="checkbox"> Clear articulation of blind spots during product launches</label></li>
+            <li><label><input type="checkbox"> Identified key user personas (commercial, supply chain, brand teams)</label></li>
+            <li><label><input type="checkbox"> Understood the cost of reactive vs. proactive decision-making</label></li>
+            <li><label><input type="checkbox"> Defined what "real-time visibility" means in operational terms</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 2
-    ══════════════════════════════════════════ -->
+    <!-- STEP 2 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -665,18 +321,11 @@
             <div class="step-meta">⏱ 12 minutes &nbsp;·&nbsp; 20 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
+        <div class="purpose-banner"><strong>🧠 Purpose</strong>Test whether your agent handles fragmented, multi-source data intelligently.</div>
 
-        <div class="purpose-banner">
-          <strong>🧠 Purpose</strong>
-          Test whether your agent handles fragmented, multi-source data intelligently.
-        </div>
-
-        <!-- Prompt 2A -->
         <div class="sub-section-title">Prompt 2A: Multi-Source Ingestion</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -698,7 +347,6 @@ How is this data ingested, standardized, and unified into a single view?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 2B -->
         <div class="sub-section-title">Prompt 2B: Data Quality &amp; Gaps</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -719,7 +367,6 @@ these data quality issues detected, flagged, and handled?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 2C -->
         <div class="sub-section-title">Prompt 2C: Real-Time vs. Delayed Data</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -744,21 +391,18 @@ can we assign to the inventory view?</pre>
         <div class="checklist-box">
           <h4>✅ Checklist — Data Ingestion &amp; Standardization (20 points)</h4>
           <ul>
-            <li>Handles multiple data formats (EDI, Excel, API) with specific approaches</li>
-            <li>Manages different data cadences (daily, weekly, monthly) intelligently</li>
-            <li>Detects and flags data quality issues (gaps, anomalies, missing fields)</li>
-            <li>Assigns data freshness and confidence indicators</li>
-            <li>Resolves conflicts between data sources with clear logic</li>
-            <li>Handles critical events (launches) with best available data</li>
+            <li><label><input type="checkbox"> Handles multiple data formats (EDI, Excel, API) with specific approaches</label></li>
+            <li><label><input type="checkbox"> Manages different data cadences (daily, weekly, monthly) intelligently</label></li>
+            <li><label><input type="checkbox"> Detects and flags data quality issues (gaps, anomalies, missing fields)</label></li>
+            <li><label><input type="checkbox"> Assigns data freshness and confidence indicators</label></li>
+            <li><label><input type="checkbox"> Resolves conflicts between data sources with clear logic</label></li>
+            <li><label><input type="checkbox"> Handles critical events (launches) with best available data</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 3
-    ══════════════════════════════════════════ -->
+    <!-- STEP 3 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -768,18 +412,11 @@ can we assign to the inventory view?</pre>
             <div class="step-meta">⏱ 8 minutes &nbsp;·&nbsp; 20 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
+        <div class="purpose-banner"><strong>🌍 Purpose</strong>Test whether your agent delivers actionable inventory and sellout insights.</div>
 
-        <div class="purpose-banner">
-          <strong>🌍 Purpose</strong>
-          Test whether your agent delivers actionable inventory and sellout insights.
-        </div>
-
-        <!-- Prompt 3A -->
         <div class="sub-section-title">Prompt 3A: Stockout Risk Detection</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -801,7 +438,6 @@ Which regions are at risk of stockout and what should we do?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 3B -->
         <div class="sub-section-title">Prompt 3B: Sellout Trend Analysis</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -822,7 +458,6 @@ What does this tell us and what actions should be taken?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 3C -->
         <div class="sub-section-title">Prompt 3C: Oversupply Detection</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -847,21 +482,18 @@ would you recommend?</pre>
         <div class="checklist-box">
           <h4>✅ Checklist — Inventory &amp; Sellout Intelligence (20 points)</h4>
           <ul>
-            <li>Correctly identifies stockout risks using stock levels AND velocity</li>
-            <li>Detects oversupply risks and recommends reallocation</li>
-            <li>Provides channel-level sellout trend analysis</li>
-            <li>Connects inventory insights to actionable recommendations</li>
-            <li>Factors in data gaps when assessing risk</li>
-            <li>Goes beyond reporting numbers to providing strategic guidance</li>
+            <li><label><input type="checkbox"> Correctly identifies stockout risks using stock levels AND velocity</label></li>
+            <li><label><input type="checkbox"> Detects oversupply risks and recommends reallocation</label></li>
+            <li><label><input type="checkbox"> Provides channel-level sellout trend analysis</label></li>
+            <li><label><input type="checkbox"> Connects inventory insights to actionable recommendations</label></li>
+            <li><label><input type="checkbox"> Factors in data gaps when assessing risk</label></li>
+            <li><label><input type="checkbox"> Goes beyond reporting numbers to providing strategic guidance</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 4
-    ══════════════════════════════════════════ -->
+    <!-- STEP 4 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -871,18 +503,11 @@ would you recommend?</pre>
             <div class="step-meta">⏱ 8 minutes &nbsp;·&nbsp; 15 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
+        <div class="purpose-banner"><strong>⚙️ Purpose</strong>Test whether your agent handles real-world operational challenges at scale.</div>
 
-        <div class="purpose-banner">
-          <strong>⚙️ Purpose</strong>
-          Test whether your agent handles real-world operational challenges at scale.
-        </div>
-
-        <!-- Prompt 4A -->
         <div class="sub-section-title">Prompt 4A: Product Launch Readiness</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -903,7 +528,6 @@ show and what alerts are triggered if something goes wrong?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 4B -->
         <div class="sub-section-title">Prompt 4B: Multi-Product &amp; Multi-Market Scaling</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -924,7 +548,6 @@ How does the system scale and what changes are needed?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 4C -->
         <div class="sub-section-title">Prompt 4C: Workflow Integration</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -946,7 +569,6 @@ users without requiring them to change their workflows?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 4D -->
         <div class="sub-section-title">Prompt 4D: Data Governance &amp; Compliance</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -971,21 +593,18 @@ respected?</pre>
         <div class="checklist-box">
           <h4>✅ Checklist — Production Readiness (15 points)</h4>
           <ul>
-            <li>Launch-specific monitoring and alerting capability</li>
-            <li>Scales to multiple products and markets without performance issues</li>
-            <li>Serves different user personas with role-appropriate outputs</li>
-            <li>Integrates with existing planning and reporting workflows</li>
-            <li>Enforces data governance and partner agreement restrictions</li>
-            <li>Responses are operationally actionable, not theoretical</li>
+            <li><label><input type="checkbox"> Launch-specific monitoring and alerting capability</label></li>
+            <li><label><input type="checkbox"> Scales to multiple products and markets without performance issues</label></li>
+            <li><label><input type="checkbox"> Serves different user personas with role-appropriate outputs</label></li>
+            <li><label><input type="checkbox"> Integrates with existing planning and reporting workflows</label></li>
+            <li><label><input type="checkbox"> Enforces data governance and partner agreement restrictions</label></li>
+            <li><label><input type="checkbox"> Responses are operationally actionable, not theoretical</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 5
-    ══════════════════════════════════════════ -->
+    <!-- STEP 5 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -995,18 +614,11 @@ respected?</pre>
             <div class="step-meta">⏱ 5 minutes &nbsp;·&nbsp; 15 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
+        <div class="purpose-banner"><strong>🛠️ Purpose</strong>Test the depth, adaptability, and intelligence of your agent.</div>
 
-        <div class="purpose-banner">
-          <strong>🛠️ Purpose</strong>
-          Test the depth, adaptability, and intelligence of your agent.
-        </div>
-
-        <!-- Prompt 5A -->
         <div class="sub-section-title">Prompt 5A: Adaptive Intelligence</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -1028,7 +640,6 @@ can be done for weekly-feed regions?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 5B -->
         <div class="sub-section-title">Prompt 5B: Conversational Intelligence</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -1049,7 +660,6 @@ spike demand?</pre>
           </ul>
         </div>
 
-        <!-- Prompt 5C -->
         <div class="sub-section-title">Prompt 5C: Predictive Capability</div>
         <div class="prompt-block">
           <div class="prompt-label">Paste this prompt into your agent</div>
@@ -1073,20 +683,17 @@ look like in 6 weeks and what supply adjustments should be made now?</pre>
         <div class="checklist-box">
           <h4>✅ Checklist — Technical Excellence (15 points)</h4>
           <ul>
-            <li>Adapts alerting model based on historical patterns and feedback</li>
-            <li>Handles complex multi-variable queries (stock + velocity + events)</li>
-            <li>Demonstrates predictive capability for proactive supply planning</li>
-            <li>Maintains response quality across varied query types</li>
-            <li>Goes beyond reporting numbers to strategic, forward-looking insights</li>
+            <li><label><input type="checkbox"> Adapts alerting model based on historical patterns and feedback</label></li>
+            <li><label><input type="checkbox"> Handles complex multi-variable queries (stock + velocity + events)</label></li>
+            <li><label><input type="checkbox"> Demonstrates predictive capability for proactive supply planning</label></li>
+            <li><label><input type="checkbox"> Maintains response quality across varied query types</label></li>
+            <li><label><input type="checkbox"> Goes beyond reporting numbers to strategic, forward-looking insights</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         STEP 6
-    ══════════════════════════════════════════ -->
+    <!-- STEP 6 -->
     <div class="checklist-step">
       <div class="checklist-step-header" onclick="toggleStep(this)">
         <div class="step-header-left">
@@ -1096,16 +703,10 @@ look like in 6 weeks and what supply adjustments should be made now?</pre>
             <div class="step-meta">⏱ 2 minutes &nbsp;·&nbsp; 5 points</div>
           </div>
         </div>
-        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        <svg class="step-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
       <div class="checklist-step-body">
-
-        <div class="purpose-banner">
-          <strong>🎤 Purpose</strong>
-          Create compelling presentation materials for your pitch.
-        </div>
+        <div class="purpose-banner"><strong>🎤 Purpose</strong>Create compelling presentation materials for your pitch.</div>
 
         <div class="sub-section-title">📊 Create Your Pitch Deck with Concierge</div>
         <div class="prompt-block">
@@ -1156,7 +757,7 @@ business impact, and product launch use case prominently featured.</pre>
           </ol>
           <p style="margin-top:0.75rem;"><strong>How to Use ValueLens:</strong></p>
           <ol>
-            <li>Access ValueLens through Concierge</li>
+            <li>Access ValueLens here: <a href="https://development-sanofi.eu.elementum.io/apps/businesscasecreation/views/list-view?search-businesscasecreation=" target="_blank" rel="noopener">https://development-sanofi.eu.elementum.io/apps/businesscasecreation/views/list-view?search-businesscasecreation=</a></li>
             <li>Input your inventory and sellout intelligence solution details</li>
             <li>Map stakeholders across Commercial, Supply Chain, Brand, and Digital teams</li>
             <li>Generate risk assessment covering data integration, partner agreements, and scalability</li>
@@ -1167,70 +768,34 @@ business impact, and product launch use case prominently featured.</pre>
         <div class="checklist-box">
           <h4>✅ Checklist — Storytelling &amp; Demo (5 points)</h4>
           <ul>
-            <li>Clear before/after narrative (reactive → proactive decision-making)</li>
-            <li>Demo uses realistic inventory and sellout scenarios (stockout risk, launch monitoring)</li>
-            <li>Acknowledges data quality and partner onboarding challenges honestly</li>
-            <li>Defines credible next steps and scaling path</li>
-            <li>Connects solution impact to product launch success and revenue protection</li>
-            <li>Pitch deck created using Concierge with compelling visuals</li>
-            <li>Business case strengthened using ValueLens with stakeholder mapping and risk assessment</li>
+            <li><label><input type="checkbox"> Clear before/after narrative (reactive → proactive decision-making)</label></li>
+            <li><label><input type="checkbox"> Demo uses realistic inventory and sellout scenarios (stockout risk, launch monitoring)</label></li>
+            <li><label><input type="checkbox"> Acknowledges data quality and partner onboarding challenges honestly</label></li>
+            <li><label><input type="checkbox"> Defines credible next steps and scaling path</label></li>
+            <li><label><input type="checkbox"> Connects solution impact to product launch success and revenue protection</label></li>
+            <li><label><input type="checkbox"> Pitch deck created using Concierge with compelling visuals</label></li>
+            <li><label><input type="checkbox"> Business case strengthened using ValueLens with stakeholder mapping and risk assessment</label></li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         FINAL VERIFICATION SUMMARY
-    ══════════════════════════════════════════ -->
+    <!-- FINAL VERIFICATION SUMMARY -->
     <div style="margin-top: 2.5rem;">
       <h2 style="font-size:1.3rem;font-weight:800;color:#e2e8f0;margin-bottom:1.25rem;">🏆 Final Verification Summary</h2>
-
       <h3 style="font-size:0.95rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;">Scoring Checkpoint</h3>
       <table class="scoring-table">
         <thead>
-          <tr>
-            <th>Criteria</th>
-            <th>Points</th>
-            <th>Self-Assessment</th>
-          </tr>
+          <tr><th>Criteria</th><th>Points</th><th>Self-Assessment</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Business &amp; User Value</td>
-            <td>25</td>
-            <td>/25</td>
-          </tr>
-          <tr>
-            <td>Data Ingestion &amp; Standardization</td>
-            <td>20</td>
-            <td>/20</td>
-          </tr>
-          <tr>
-            <td>Scalability &amp; Reach</td>
-            <td>20</td>
-            <td>/20</td>
-          </tr>
-          <tr>
-            <td>Production Readiness &amp; Ownership</td>
-            <td>15</td>
-            <td>/15</td>
-          </tr>
-          <tr>
-            <td>Technical Excellence &amp; Innovation</td>
-            <td>15</td>
-            <td>/15</td>
-          </tr>
-          <tr>
-            <td>Storytelling &amp; Demo</td>
-            <td>5</td>
-            <td>/5</td>
-          </tr>
-          <tr>
-            <td><strong>TOTAL</strong></td>
-            <td><strong>100</strong></td>
-            <td><strong>_/100</strong></td>
-          </tr>
+          <tr><td>Business &amp; User Value</td><td>25</td><td>/25</td></tr>
+          <tr><td>Data Ingestion &amp; Standardization</td><td>20</td><td>/20</td></tr>
+          <tr><td>Scalability &amp; Reach</td><td>20</td><td>/20</td></tr>
+          <tr><td>Production Readiness &amp; Ownership</td><td>15</td><td>/15</td></tr>
+          <tr><td>Technical Excellence &amp; Innovation</td><td>15</td><td>/15</td></tr>
+          <tr><td>Storytelling &amp; Demo</td><td>5</td><td>/5</td></tr>
+          <tr><td><strong>TOTAL</strong></td><td><strong>100</strong></td><td><strong>_/100</strong></td></tr>
         </tbody>
       </table>
 
@@ -1264,7 +829,7 @@ business impact, and product launch use case prominently featured.</pre>
       </div>
     </div>
 
-  </div><!-- /.checklist-container -->
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -1279,21 +844,15 @@ business impact, and product launch use case prominently featured.</pre>
     function toggleStep(header) {
       const body = header.nextElementSibling;
       const isOpen = header.classList.contains('open');
-
-      // Close all open steps
       document.querySelectorAll('.checklist-step-header.open').forEach(function(h) {
         h.classList.remove('open');
         h.nextElementSibling.classList.remove('open');
       });
-
-      // If it wasn't open, open it
       if (!isOpen) {
         header.classList.add('open');
         body.classList.add('open');
       }
     }
-
-    // Mobile nav toggle (mirrors existing script.js pattern)
     var navToggle = document.querySelector('.nav-toggle');
     var navLinks  = document.getElementById('navLinks');
     if (navToggle && navLinks) {
@@ -1306,4 +865,3 @@ business impact, and product launch use case prominently featured.</pre>
   </script>
 </body>
 </html>
-```
