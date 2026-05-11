@@ -11,11 +11,11 @@
   <style>
     /* ── Dropdown / Accordion ── */
     .checklist-step {
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(124, 58, 237, 0.25);
       border-radius: 12px;
       margin-bottom: 1.25rem;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .checklist-step-header {
@@ -23,7 +23,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 1.5rem;
-      background: #fff;
+      background: transparent;
       cursor: pointer;
       user-select: none;
       gap: 1rem;
@@ -31,12 +31,12 @@
     }
 
     .checklist-step-header:hover {
-      background: #f8fafc;
+      background: rgba(124, 58, 237, 0.08);
     }
 
     .checklist-step-header.open {
-      background: #f0f4ff;
-      border-bottom: 1px solid #e2e8f0;
+      background: rgba(124, 58, 237, 0.15);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.25);
     }
 
     .step-header-left {
@@ -58,13 +58,13 @@
     .step-title {
       font-size: 1.05rem;
       font-weight: 600;
-      color: #1e293b;
+      color: #e2e8f0;
       margin: 0;
     }
 
     .step-meta {
       font-size: 0.82rem;
-      color: #64748b;
+      color: #94a3b8;
       margin-top: 0.15rem;
     }
 
@@ -72,7 +72,7 @@
       width: 22px;
       height: 22px;
       flex-shrink: 0;
-      color: #7c3aed;
+      color: #a78bfa;
       transition: transform 0.3s;
     }
 
@@ -83,7 +83,7 @@
     .checklist-step-body {
       display: none;
       padding: 1.75rem 1.75rem 2rem;
-      background: #fff;
+      background: transparent;
     }
 
     .checklist-step-body.open {
@@ -92,13 +92,13 @@
 
     /* ── Content Styles ── */
     .purpose-banner {
-      background: #f0f4ff;
+      background: rgba(124, 58, 237, 0.15);
       border-left: 4px solid #7c3aed;
       border-radius: 0 8px 8px 0;
       padding: 0.85rem 1.1rem;
       margin-bottom: 1.5rem;
       font-size: 0.92rem;
-      color: #3730a3;
+      color: #c4b5fd;
     }
 
     .purpose-banner strong {
@@ -107,7 +107,7 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #7c3aed;
+      color: #a78bfa;
     }
 
     .prompt-block {
@@ -116,6 +116,7 @@
       padding: 1.25rem 1.4rem;
       margin: 1.25rem 0;
       position: relative;
+      border: 1px solid rgba(124, 58, 237, 0.2);
     }
 
     .prompt-label {
@@ -138,8 +139,8 @@
     }
 
     .look-for-block {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(100, 116, 139, 0.3);
       border-radius: 10px;
       padding: 1.1rem 1.3rem;
       margin: 1rem 0 1.5rem;
@@ -150,7 +151,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #475569;
+      color: #94a3b8;
       margin: 0 0 0.75rem;
     }
 
@@ -162,7 +163,7 @@
 
     .look-for-block ul li {
       font-size: 0.9rem;
-      color: #334155;
+      color: #cbd5e1;
       padding: 0.3rem 0;
       display: flex;
       align-items: flex-start;
@@ -174,8 +175,8 @@
     .look-for-block ul li.red::before   { content: "❌"; flex-shrink: 0; }
 
     .checklist-box {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
+      background: rgba(21, 128, 61, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.25);
       border-radius: 10px;
       padding: 1.25rem 1.4rem;
       margin-top: 1.5rem;
@@ -186,7 +187,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #15803d;
+      color: #4ade80;
       margin: 0 0 1rem;
     }
 
@@ -198,7 +199,7 @@
 
     .checklist-box ul li {
       font-size: 0.9rem;
-      color: #166534;
+      color: #86efac;
       padding: 0.35rem 0;
       display: flex;
       align-items: flex-start;
@@ -210,12 +211,12 @@
       content: "☐";
       flex-shrink: 0;
       font-size: 1rem;
-      color: #16a34a;
+      color: #4ade80;
     }
 
     .self-assess-block {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
+      background: rgba(120, 53, 15, 0.2);
+      border: 1px solid rgba(251, 191, 36, 0.25);
       border-radius: 10px;
       padding: 1.1rem 1.3rem;
       margin: 1rem 0 1.5rem;
@@ -226,7 +227,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #92400e;
+      color: #fbbf24;
       margin: 0 0 0.75rem;
     }
 
@@ -238,7 +239,7 @@
 
     .self-assess-block ul li {
       font-size: 0.9rem;
-      color: #78350f;
+      color: #fde68a;
       padding: 0.3rem 0;
       display: flex;
       align-items: flex-start;
@@ -249,21 +250,21 @@
     .self-assess-block ul li::before {
       content: "☐";
       flex-shrink: 0;
-      color: #d97706;
+      color: #f59e0b;
     }
 
     .self-assess-block .warning-note {
       margin-top: 0.75rem;
       font-size: 0.85rem;
-      color: #92400e;
+      color: #fbbf24;
       font-style: italic;
-      border-top: 1px solid #fde68a;
+      border-top: 1px solid rgba(251, 191, 36, 0.25);
       padding-top: 0.65rem;
     }
 
     .research-block {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(100, 116, 139, 0.3);
       border-radius: 10px;
       padding: 1.1rem 1.3rem;
       margin-bottom: 1.25rem;
@@ -274,7 +275,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: #475569;
+      color: #94a3b8;
       margin: 0 0 0.75rem;
     }
 
@@ -286,7 +287,7 @@
 
     .research-block ul li {
       font-size: 0.9rem;
-      color: #334155;
+      color: #cbd5e1;
       padding: 0.3rem 0;
       display: flex;
       align-items: flex-start;
@@ -297,21 +298,21 @@
     .research-block ul li::before {
       content: "→";
       flex-shrink: 0;
-      color: #7c3aed;
+      color: #a78bfa;
     }
 
     .sub-section-title {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #1e293b;
+      color: #e2e8f0;
       margin: 1.75rem 0 0.75rem;
       padding-bottom: 0.4rem;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid rgba(124, 58, 237, 0.3);
     }
 
     .valuelens-block {
-      background: #faf5ff;
-      border: 1px solid #e9d5ff;
+      background: rgba(109, 40, 217, 0.15);
+      border: 1px solid rgba(167, 139, 250, 0.3);
       border-radius: 10px;
       padding: 1.25rem 1.4rem;
       margin: 1.25rem 0;
@@ -320,13 +321,13 @@
     .valuelens-block h5 {
       font-size: 0.85rem;
       font-weight: 700;
-      color: #6d28d9;
+      color: #c4b5fd;
       margin: 0 0 0.6rem;
     }
 
     .valuelens-block p {
       font-size: 0.9rem;
-      color: #4c1d95;
+      color: #ddd6fe;
       margin: 0 0 0.75rem;
       line-height: 1.6;
     }
@@ -338,7 +339,7 @@
 
     .valuelens-block ol li {
       font-size: 0.9rem;
-      color: #4c1d95;
+      color: #ddd6fe;
       padding: 0.25rem 0;
       line-height: 1.5;
     }
@@ -366,18 +367,18 @@
 
     .scoring-table td {
       padding: 0.7rem 1rem;
-      border-bottom: 1px solid #e2e8f0;
-      color: #334155;
+      border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+      color: #cbd5e1;
     }
 
     .scoring-table tr:last-child td {
       font-weight: 700;
-      background: #f0f4ff;
-      color: #1e293b;
+      background: rgba(124, 58, 237, 0.2);
+      color: #e2e8f0;
     }
 
     .scoring-table tr:nth-child(even) td {
-      background: #f8fafc;
+      background: rgba(15, 23, 42, 0.4);
     }
 
     /* ── Final Summary ── */
@@ -519,8 +520,8 @@
     }
 
     .process-overview {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(100, 116, 139, 0.3);
       border-radius: 12px;
       padding: 1.4rem 1.6rem;
       margin-bottom: 2rem;
@@ -531,13 +532,13 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      color: #475569;
+      color: #94a3b8;
       margin: 0 0 0.6rem;
     }
 
     .process-overview p {
       font-size: 0.92rem;
-      color: #475569;
+      color: #94a3b8;
       line-height: 1.65;
       margin: 0;
     }
@@ -1183,9 +1184,9 @@ business impact, and product launch use case prominently featured.</pre>
          FINAL VERIFICATION SUMMARY
     ══════════════════════════════════════════ -->
     <div style="margin-top: 2.5rem;">
-      <h2 style="font-size:1.3rem;font-weight:800;color:#1e293b;margin-bottom:1.25rem;">🏆 Final Verification Summary</h2>
+      <h2 style="font-size:1.3rem;font-weight:800;color:#e2e8f0;margin-bottom:1.25rem;">🏆 Final Verification Summary</h2>
 
-      <h3 style="font-size:0.95rem;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;">Scoring Checkpoint</h3>
+      <h3 style="font-size:0.95rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;">Scoring Checkpoint</h3>
       <table class="scoring-table">
         <thead>
           <tr>
