@@ -3,15 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ============ EDIT: PAGE TITLE (shown in browser tab) ============ -->
   <title>Hacking Health Toronto 2026</title>
-
-  <!-- ============ EDIT: SEO DESCRIPTION ============ -->
   <meta name="description" content="Join us for Hacking Health Toronto 2026 on May 25–26, 2026 at the Snowflake Office, 16 York St., Toronto." />
-
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .nav {
+      background-color: #0a0a0a;
+      border-bottom: 1px solid #2a1a4a;
+    }
+
+    .nav-brand,
+    .nav-links a {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover {
+      color: #a78bfa;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: #000000;
+    }
+
+    .hero-img-overlay p,
+    .hero-img-overlay h1 {
+      color: #ffffff;
+    }
+
+    .eyebrow {
+      color: #a78bfa;
+      letter-spacing: 0.08em;
+    }
+
+    .title-highlight {
+      background: linear-gradient(90deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Key Dates Bar */
+    .key-dates-bar {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 100%);
+      border-top: 1px solid #2a1a4a;
+      border-bottom: 1px solid #2a1a4a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .key-dates-bar::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .key-dates-heading {
+      color: #a78bfa;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .key-date-label {
+      color: #a78bfa;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .key-date-value {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .key-date-location {
+      color: #a0a0a0;
+      font-size: 0.85rem;
+    }
+
+    .key-date-divider {
+      background: linear-gradient(180deg, transparent, #7c3aed, transparent);
+    }
+
+    /* Sections */
+    .section {
+      background-color: #000000;
+    }
+
+    .section-alt {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0f0a1e 100%);
+    }
+
+    .section-title {
+      color: #ffffff;
+      position: relative;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      color: #c4b5fd;
+    }
+
+    /* Venue */
+    .venue-info h3 {
+      color: #ffffff;
+    }
+
+    .venue-info h4 {
+      color: #a78bfa;
+    }
+
+    .venue-info p {
+      color: #e0e0e0;
+    }
+
+    .floor-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #1a0f2e 100%);
+      border: 1px solid #2a1a4a;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
+    }
+
+    .floor-card--highlight {
+      border-left: 4px solid #7c3aed;
+    }
+
+    .floor-badge {
+      color: #a78bfa;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .floor-card ul {
+      color: #e0e0e0;
+    }
+
+    .venue-map iframe {
+      border-radius: 12px;
+      border: 1px solid #2a1a4a;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
+    }
+
+    /* Schedule */
+    .day-heading {
+      color: #a78bfa;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .day-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      border-radius: 2px;
+    }
+
+    .session {
+      border-left: 2px solid #2a1a4a;
+      transition: border-color 0.3s ease;
+      position: relative;
+    }
+
+    .session::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0.4rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7c3aed;
+      box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
+    }
+
+    .session:hover {
+      border-left-color: #7c3aed;
+    }
+
+    .session .time {
+      color: #a78bfa;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .session h4 {
+      color: #ffffff;
+    }
+
+    .session p {
+      color: #e0e0e0;
+    }
+
+    .session a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+
+    .session a:hover {
+      color: #ffffff;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0a0a0a;
+      border-top: 1px solid #2a1a4a;
+      color: #a0a0a0;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,10 +264,6 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       EDIT: HOME / HERO SECTION
-       Change the event name, dates, tagline, and button link.
-       ============================================================ -->
   <section id="home" class="hero">
     <div class="hero-img-wrap">
       <img src="assets/hacking-health-logo.png" alt="Hacking Health" class="hero-brand-img" />
@@ -52,7 +278,6 @@
     </div>
   </section>
 
-  <!-- Key Dates Bar -->
   <div class="key-dates-bar">
     <div class="container">
       <p class="key-dates-heading">Key Dates</p>
@@ -84,12 +309,6 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       EDIT: LOCATION SECTION
-       Change the address text and the Google Maps embed URL below.
-       To get a new map: go to maps.google.com, search the venue, click
-       Share -> Embed a map -> copy the src URL into the iframe below.
-       ============================================================ -->
   <section id="location" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Start Here</h2>
@@ -133,10 +352,6 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       EDIT: SCHEDULE SECTION
-       To add/remove a session, copy or delete a `<div class="session">` block.
-       ============================================================ -->
   <section id="schedule" class="section">
     <div class="container">
       <h2 class="section-title">Schedule</h2>
@@ -144,7 +359,6 @@
 
       <div class="schedule-grid">
 
-        <!-- ============ EDIT: DAY 1 ============ -->
         <div class="day-column">
           <h3 class="day-heading">Day 1 &mdash; May 25, 2026</h3>
 
@@ -202,7 +416,6 @@
           </div>
         </div>
 
-        <!-- ============ EDIT: DAY 2 ============ -->
         <div class="day-column">
           <h3 class="day-heading">Day 2 &mdash; May 26, 2026</h3>
 
