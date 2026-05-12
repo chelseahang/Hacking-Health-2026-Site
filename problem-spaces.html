@@ -8,8 +8,6 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Dark Theme Problem Spaces Styles ── */
-
     body {
       background: #000000;
       color: #e5e7eb;
@@ -36,9 +34,6 @@
     }
 
     .section-title {
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
       margin-bottom: 0.5rem;
       color: #f9fafb;
     }
@@ -60,7 +55,6 @@
       align-items: stretch;
     }
 
-    /* ── Problem Space cards: fill first 3 positions ── */
     .problem-card--ps:nth-child(1) {
       grid-column: 1;
       grid-row: 1;
@@ -76,7 +70,6 @@
       grid-row: 2;
     }
 
-    /* ── Column 4 wrapper: takes position 4 (bottom right) ── */
     .problem-col-4 {
       grid-column: 2;
       grid-row: 2;
@@ -85,7 +78,6 @@
       gap: 1.75rem;
     }
 
-    /* Each stacked card in col 4 takes half the height */
     .problem-col-4 .problem-card {
       flex: 1;
       min-height: 0;
@@ -151,7 +143,6 @@
       box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
     }
 
-    /* ── Card Headings ── */
     .problem-card h3 {
       font-size: 1.15rem;
       font-weight: 700;
@@ -161,7 +152,6 @@
       letter-spacing: -0.2px;
     }
 
-    /* ── Card Body Text ── */
     .problem-card p {
       font-size: 0.925rem;
       color: #9ca3af;
@@ -175,7 +165,6 @@
       font-weight: 600;
     }
 
-    /* ── Buttons ── */
     .problem-card .btn.btn-primary.btn-sm {
       display: inline-flex !important;
       align-items: center;
@@ -206,7 +195,7 @@
       transform: translateY(0);
     }
 
-    /* ── Purple / Submission Guidelines Card ── */
+    /* ── Purple Submission Card ── */
     .problem-card.problem-card--purple {
       background: linear-gradient(135deg, #1e0a3c 0%, #3b1278 50%, #4c1d95 100%);
       color: #fff;
@@ -218,29 +207,6 @@
 
     .problem-card.problem-card--purple::before {
       display: none;
-    }
-
-    .problem-card.problem-card--purple::after {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      pointer-events: none;
-    }
-
-    .problem-card.problem-card--purple .deco-circle {
-      position: absolute;
-      bottom: -30px;
-      left: -30px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-      pointer-events: none;
     }
 
     .problem-card.problem-card--purple h3 {
@@ -261,7 +227,6 @@
       flex-grow: 1;
     }
 
-    /* Deadline pill */
     .deadline-pill {
       display: inline-flex;
       align-items: center;
@@ -300,7 +265,6 @@
       color: #a78bfa;
     }
 
-    /* ── Responsive ── */
     @media (max-width: 768px) {
       .problem-grid {
         grid-template-columns: 1fr;
@@ -323,10 +287,6 @@
 
       .section {
         padding: 2.5rem 0 3.5rem;
-      }
-
-      .section-title {
-        font-size: 1.9rem;
       }
 
       .problem-card {
@@ -363,7 +323,6 @@
 
       <div class="problem-grid">
 
-        <!-- ============ PROBLEM SPACE 1 (top left) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">01</div>
           <h3>Commercial Invoice to Revenue Accuracy</h3>
@@ -371,7 +330,6 @@
           <a href="ps1-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ PROBLEM SPACE 2 (top right) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">02</div>
           <h3>HCP Engagement &amp; Prioritization</h3>
@@ -379,7 +337,6 @@
           <a href="ps2-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ PROBLEM SPACE 3 (bottom left) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">03</div>
           <h3>Inventory Sales Pipeline Optimization</h3>
@@ -387,19 +344,15 @@
           <a href="ps5-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ Bottom right: Judges + Submission stacked ============ -->
         <div class="problem-col-4">
 
-          <!-- Judges' & Mentors' Guide (top) -->
           <div class="problem-card">
             <h3>Judges' &amp; Mentors' Guide</h3>
             <p>Scoring rubric, evaluation criteria, and guidance for judges and mentors participating in Hacking Health Toronto 2026.</p>
             <a href="judges-guide.html" class="btn btn-primary btn-sm">View Judges' Guide &rarr;</a>
           </div>
 
-          <!-- Submission Guidelines (bottom) -->
           <div class="problem-card problem-card--purple">
-            <div class="deco-circle"></div>
             <h3>Submission Guidelines</h3>
             <p>Please submit your final code to your team's submission folder by 1:00 PM on Day 2.</p>
             <div class="deadline-pill">Deadline: 1:00 PM — Day 2</div>
