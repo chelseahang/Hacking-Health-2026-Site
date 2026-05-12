@@ -9,11 +9,16 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Enhanced Problem Spaces Styles ── */
+    /* ── Dark Theme Problem Spaces Styles ── */
+
+    body {
+      background: #000000;
+      color: #e5e7eb;
+    }
 
     .section {
       padding: 4rem 0 5rem;
-      background: linear-gradient(160deg, #f8f9fc 0%, #f0f2f8 100%);
+      background: linear-gradient(160deg, #0a0a0a 0%, #111111 100%);
       min-height: calc(100vh - 120px);
     }
 
@@ -22,12 +27,12 @@
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 0.5rem;
-      color: #1a1a2e;
+      color: #f9fafb;
     }
 
     .section-subtitle {
       font-size: 1.1rem;
-      color: #6b7280;
+      color: #9ca3af;
       margin-bottom: 2.75rem;
       font-weight: 400;
       letter-spacing: 0.01em;
@@ -36,23 +41,48 @@
     /* ── Grid ── */
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(3, 1fr) minmax(280px, 1fr);
+      grid-template-rows: auto auto;
       gap: 1.75rem;
       align-items: start;
     }
 
+    /* Cards 01, 02, 03 span one column each, row 1 */
+    .problem-card--ps {
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 480px;
+    }
+
+    /* Judges card: column 4, row 1 */
+    .problem-card--judges {
+      grid-column: 4;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Submission card: column 4, row 2 */
+    .problem-card--submission {
+      grid-column: 4;
+      grid-row: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
     /* ── Base Card ── */
     .problem-card {
-      background: #ffffff;
+      background: #1a1a1a;
       border-radius: 16px;
       padding: 2rem 2rem 1.75rem;
       display: flex;
       flex-direction: column;
       gap: 0;
       box-shadow:
-        0 1px 3px rgba(0,0,0,0.06),
-        0 4px 16px rgba(0,0,0,0.07),
-        0 0 0 1px rgba(0,0,0,0.04);
+        0 1px 3px rgba(0,0,0,0.4),
+        0 4px 16px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255,255,255,0.06);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
       position: relative;
       overflow: hidden;
@@ -73,9 +103,9 @@
     .problem-card:hover {
       transform: translateY(-4px);
       box-shadow:
-        0 2px 6px rgba(0,0,0,0.07),
-        0 12px 32px rgba(0,0,0,0.11),
-        0 0 0 1px rgba(0,0,0,0.04);
+        0 2px 6px rgba(0,0,0,0.5),
+        0 12px 32px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(255,255,255,0.09);
     }
 
     .problem-card:hover::before {
@@ -89,21 +119,22 @@
       justify-content: center;
       width: 2.4rem;
       height: 2.4rem;
-      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
-      color: #6d28d9;
+      background: linear-gradient(135deg, #2e1a4a, #3b1f6b);
+      color: #c4b5fd;
       font-size: 0.78rem;
       font-weight: 800;
       border-radius: 8px;
       letter-spacing: 0.04em;
       margin-bottom: 1rem;
       flex-shrink: 0;
+      border: 1px solid rgba(167,139,250,0.2);
     }
 
     /* ── Card Headings ── */
     .problem-card h3 {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #111827;
+      color: #f3f4f6;
       margin: 0 0 0.85rem;
       line-height: 1.35;
       letter-spacing: -0.2px;
@@ -112,14 +143,14 @@
     /* ── Card Body Text ── */
     .problem-card p {
       font-size: 0.925rem;
-      color: #4b5563;
+      color: #9ca3af;
       line-height: 1.75;
       margin: 0 0 0.5rem;
       flex-grow: 1;
     }
 
     .problem-card p strong {
-      color: #1f2937;
+      color: #e5e7eb;
       font-weight: 600;
     }
 
@@ -128,8 +159,9 @@
       display: inline-flex !important;
       align-items: center;
       gap: 0.3rem;
-      margin-top: 1.25rem !important;
+      margin-top: auto !important;
       padding: 0.55rem 1.1rem !important;
+      padding-top: 0.55rem !important;
       font-size: 0.85rem;
       font-weight: 600;
       border-radius: 8px;
@@ -139,14 +171,15 @@
       text-decoration: none;
       letter-spacing: 0.01em;
       transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
-      box-shadow: 0 2px 8px rgba(109,40,217,0.25);
+      box-shadow: 0 2px 8px rgba(109,40,217,0.4);
       align-self: flex-start;
+      margin-top: 1.25rem !important;
     }
 
     .problem-card .btn.btn-primary.btn-sm:hover {
       background: linear-gradient(135deg, #6d28d9, #5b21b6);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(109,40,217,0.35);
+      box-shadow: 0 4px 14px rgba(109,40,217,0.55);
     }
 
     .problem-card .btn.btn-primary.btn-sm:active {
@@ -155,12 +188,12 @@
 
     /* ── Purple / Submission Guidelines Card ── */
     .problem-card.problem-card--purple {
-      background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #7c3aed 100%);
+      background: linear-gradient(135deg, #1e0a3c 0%, #3b1278 50%, #4c1d95 100%);
       color: #fff;
-      border: none;
+      border: 1px solid rgba(167,139,250,0.25);
       box-shadow:
-        0 4px 20px rgba(109,40,217,0.35),
-        0 1px 4px rgba(0,0,0,0.1);
+        0 4px 20px rgba(109,40,217,0.4),
+        0 1px 4px rgba(0,0,0,0.5);
       position: relative;
       overflow: hidden;
     }
@@ -178,7 +211,7 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.05);
       pointer-events: none;
     }
 
@@ -189,7 +222,7 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.04);
       pointer-events: none;
     }
 
@@ -203,11 +236,12 @@
     }
 
     .problem-card.problem-card--purple p {
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.82);
       font-size: 0.95rem;
       line-height: 1.7;
       position: relative;
       z-index: 1;
+      flex-grow: 0;
     }
 
     /* Deadline pill */
@@ -215,8 +249,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
       color: #fff;
       font-size: 0.82rem;
       font-weight: 700;
@@ -227,6 +261,7 @@
       position: relative;
       z-index: 1;
       backdrop-filter: blur(4px);
+      align-self: flex-start;
     }
 
     .deadline-pill::before {
@@ -238,19 +273,42 @@
     .problem-card.problem-card--purple:hover {
       transform: translateY(-4px);
       box-shadow:
-        0 8px 30px rgba(109,40,217,0.45),
-        0 2px 8px rgba(0,0,0,0.12);
+        0 8px 30px rgba(109,40,217,0.55),
+        0 2px 8px rgba(0,0,0,0.5);
     }
 
     /* ── Divider between card text sections ── */
     .card-divider {
       width: 100%;
       height: 1px;
-      background: #f3f4f6;
+      background: #2a2a2a;
       margin: 1rem 0 0.25rem;
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1199px) {
+      .problem-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+      }
+
+      .problem-card--ps {
+        grid-row: auto;
+        grid-column: auto;
+        min-height: 0;
+      }
+
+      .problem-card--judges {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .problem-card--submission {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
     @media (max-width: 768px) {
       .problem-grid {
         grid-template-columns: 1fr;
@@ -268,11 +326,17 @@
       .problem-card {
         padding: 1.6rem 1.5rem 1.5rem;
       }
+
+      .problem-card--ps {
+        min-height: 0;
+      }
     }
 
     @media (min-width: 1200px) {
-      .problem-grid {
-        grid-template-columns: repeat(3, 1fr);
+      /* Force all three PS cards to the same height by making the row stretch */
+      .problem-card--ps {
+        /* Use align-self stretch so all three fill the row height equally */
+        align-self: stretch;
       }
     }
   </style>
@@ -298,11 +362,6 @@
     </div>
   </header>
 
-  <!-- ============================================================
-       EDIT: PROBLEM SPACES SECTION
-       Fill in each tile with a problem space title and description.
-       To add more tiles, copy a `<div class="problem-card">` block.
-       ============================================================ -->
   <section class="section">
     <div class="container">
       <h2 class="section-title">Problem Spaces</h2>
@@ -310,43 +369,43 @@
 
       <div class="problem-grid">
 
-        <!-- ============ EDIT: PROBLEM SPACE 1 ============ -->
-        <div class="problem-card">
+        <!-- ============ PROBLEM SPACE 1 ============ -->
+        <div class="problem-card problem-card--ps">
           <div class="problem-number">01</div>
           <h3>Commercial Invoice to Revenue Accuracy</h3>
           <p>Commercial and Market Access teams in Canada manually validate thousands of payer invoices annually, creating significant resource strain and delays in strategic insights. Current processes rely on external consultants, costing $200K–$300K annually, while limiting real-time visibility into $100M+ in revenue.<br><br><strong>The challenge:</strong> build an AI solution that automatically ingests, validates, and analyzes invoices (PDF + Excel), applies agreement-specific rules, and enables conversational queries across historical data — creating a scalable template for global invoice reconciliation.</p>
-          <a href="ps1-checklist.html" class="btn btn-primary btn-sm" style="margin-top:auto;padding-top:1.25rem;display:inline-block;">Check if your agent meets judging criteria &rarr;</a>
+          <a href="ps1-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ EDIT: PROBLEM SPACE 2 ============ -->
-        <div class="problem-card">
+        <!-- ============ PROBLEM SPACE 2 ============ -->
+        <div class="problem-card problem-card--ps">
           <div class="problem-number">02</div>
           <h3>HCP Engagement &amp; Prioritization</h3>
           <p>Under Canada's CASL regulations, commercial teams have one meaningful opportunity to request digital consent from healthcare professionals (HCPs). With thousands of HCPs currently non-consented and outreach largely undifferentiated, limited field force resources are being applied broadly rather than strategically — risking missed opportunities with high-value prescribers.<br><br><strong>The challenge:</strong> build a data-driven prioritization engine that scores non-consented HCPs using CRM engagement data and IQVIA prescriber insights, classifies them into priority tiers, and recommends tailored consent strategies — maximizing field force ROI and creating a repeatable framework scalable across Canada, EU, Australia, and Asia.</p>
-          <a href="ps2-checklist.html" class="btn btn-primary btn-sm" style="margin-top:auto;padding-top:1.25rem;display:inline-block;">Check if your agent meets judging criteria &rarr;</a>
+          <a href="ps2-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ EDIT: PROBLEM SPACE 3 ============ -->
-        <div class="problem-card">
+        <!-- ============ PROBLEM SPACE 3 ============ -->
+        <div class="problem-card problem-card--ps">
           <div class="problem-number">03</div>
           <h3>Inventory Sales Pipeline Optimization</h3>
           <p>Commercial, supply chain, and brand teams lack real-time visibility into inventory levels and sellout performance across the distribution network. Data is fragmented across multiple sources, arrives with significant delays, and requires manual consolidation—creating blind spots during product launches and reactive decision-making that impacts revenue and patient access.<br><br><strong>The challenge:</strong> build a real-time inventory and sales tracking system that automatically ingests data from multiple sources, delivers unified stock-level and sellout visibility across the distribution chain, and enables conversational queries like "Which regions are at risk of stockout for Product X?"—enabling proactive, data-driven action.</p>
-          <a href="ps5-checklist.html" class="btn btn-primary btn-sm" style="margin-top:auto;padding-top:1.25rem;display:inline-block;">Check if your agent meets judging criteria &rarr;</a>
+          <a href="ps5-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ SUBMISSION GUIDELINES ============ -->
-        <div class="problem-card problem-card--purple">
+        <!-- ============ JUDGES' & MENTORS' GUIDE (column 4, row 1) ============ -->
+        <div class="problem-card problem-card--judges">
+          <h3>Judges' &amp; Mentors' Guide</h3>
+          <p>Scoring rubric, evaluation criteria, and guidance for judges and mentors participating in Hacking Health Toronto 2026.</p>
+          <a href="judges-guide.html" class="btn btn-primary btn-sm">View Judges' Guide &rarr;</a>
+        </div>
+
+        <!-- ============ SUBMISSION GUIDELINES (column 4, row 2) ============ -->
+        <div class="problem-card problem-card--purple problem-card--submission">
           <div class="deco-circle"></div>
           <h3>Submission Guidelines</h3>
           <p>Please submit your final code to your team's submission folder by 1:00 PM on Day 2.</p>
           <div class="deadline-pill">Deadline: 1:00 PM — Day 2</div>
-        </div>
-
-        <!-- ============ JUDGES' & MENTORS' GUIDE ============ -->
-        <div class="problem-card">
-          <h3>Judges' &amp; Mentors' Guide</h3>
-          <p>Scoring rubric, evaluation criteria, and guidance for judges and mentors participating in Hacking Health Toronto 2026.</p>
-          <a href="judges-guide.html" class="btn btn-primary btn-sm" style="margin-top:auto;padding-top:1.25rem;display:inline-block;">View Judges' Guide &rarr;</a>
         </div>
 
       </div>
