@@ -38,37 +38,35 @@
       letter-spacing: 0.01em;
     }
 
-    /* ── Grid ── */
+    /* ── 4-column grid ── */
     .problem-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr) minmax(280px, 1fr);
-      grid-template-rows: auto auto;
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.75rem;
-      align-items: start;
+      align-items: stretch;
     }
 
-    /* Cards 01, 02, 03 span one column each, row 1 */
+    /* ── Problem Space cards: columns 1–3, all same row and height ── */
     .problem-card--ps {
-      grid-row: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 480px;
-    }
-
-    /* Judges card: column 4, row 1 */
-    .problem-card--judges {
-      grid-column: 4;
+      grid-column: auto;
       grid-row: 1;
       display: flex;
       flex-direction: column;
     }
 
-    /* Submission card: column 4, row 2 */
-    .problem-card--submission {
+    /* ── Column 4 wrapper: stacks Judges + Submission vertically ── */
+    .problem-col-4 {
       grid-column: 4;
-      grid-row: 2;
+      grid-row: 1;
       display: flex;
       flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    /* Each stacked card in col 4 takes half the height */
+    .problem-col-4 .problem-card {
+      flex: 1;
+      min-height: 0;
     }
 
     /* ── Base Card ── */
@@ -78,7 +76,6 @@
       padding: 2rem 2rem 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 0;
       box-shadow:
         0 1px 3px rgba(0,0,0,0.4),
         0 4px 16px rgba(0,0,0,0.5),
@@ -159,9 +156,7 @@
       display: inline-flex !important;
       align-items: center;
       gap: 0.3rem;
-      margin-top: auto !important;
       padding: 0.55rem 1.1rem !important;
-      padding-top: 0.55rem !important;
       font-size: 0.85rem;
       font-weight: 600;
       border-radius: 8px;
@@ -173,7 +168,8 @@
       transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
       box-shadow: 0 2px 8px rgba(109,40,217,0.4);
       align-self: flex-start;
-      margin-top: 1.25rem !important;
+      margin-top: 1.25rem;
+      flex-shrink: 0;
     }
 
     .problem-card .btn.btn-primary.btn-sm:hover {
@@ -194,15 +190,12 @@
       box-shadow:
         0 4px 20px rgba(109,40,217,0.4),
         0 1px 4px rgba(0,0,0,0.5);
-      position: relative;
-      overflow: hidden;
     }
 
     .problem-card.problem-card--purple::before {
       display: none;
     }
 
-    /* Decorative circles */
     .problem-card.problem-card--purple::after {
       content: '';
       position: absolute;
@@ -241,7 +234,7 @@
       line-height: 1.7;
       position: relative;
       z-index: 1;
-      flex-grow: 0;
+      flex-grow: 1;
     }
 
     /* Deadline pill */
@@ -262,6 +255,7 @@
       z-index: 1;
       backdrop-filter: blur(4px);
       align-self: flex-start;
+      flex-shrink: 0;
     }
 
     .deadline-pill::before {
@@ -269,20 +263,11 @@
       font-size: 0.85rem;
     }
 
-    /* ── Hover lift for purple card ── */
     .problem-card.problem-card--purple:hover {
       transform: translateY(-4px);
       box-shadow:
         0 8px 30px rgba(109,40,217,0.55),
         0 2px 8px rgba(0,0,0,0.5);
-    }
-
-    /* ── Divider between card text sections ── */
-    .card-divider {
-      width: 100%;
-      height: 1px;
-      background: #2a2a2a;
-      margin: 1rem 0 0.25rem;
     }
 
     /* ── Responsive ── */
@@ -295,17 +280,12 @@
       .problem-card--ps {
         grid-row: auto;
         grid-column: auto;
-        min-height: 0;
       }
 
-      .problem-card--judges {
+      .problem-col-4 {
         grid-column: auto;
         grid-row: auto;
-      }
-
-      .problem-card--submission {
-        grid-column: auto;
-        grid-row: auto;
+        flex-direction: row;
       }
     }
 
@@ -327,16 +307,10 @@
         padding: 1.6rem 1.5rem 1.5rem;
       }
 
-      .problem-card--ps {
-        min-height: 0;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      /* Force all three PS cards to the same height by making the row stretch */
-      .problem-card--ps {
-        /* Use align-self stretch so all three fill the row height equally */
-        align-self: stretch;
+      .problem-col-4 {
+        grid-column: auto;
+        grid-row: auto;
+        flex-direction: column;
       }
     }
   </style>
@@ -369,7 +343,7 @@
 
       <div class="problem-grid">
 
-        <!-- ============ PROBLEM SPACE 1 ============ -->
+        <!-- ============ PROBLEM SPACE 1 (col 1) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">01</div>
           <h3>Commercial Invoice to Revenue Accuracy</h3>
@@ -377,7 +351,7 @@
           <a href="ps1-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ PROBLEM SPACE 2 ============ -->
+        <!-- ============ PROBLEM SPACE 2 (col 2) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">02</div>
           <h3>HCP Engagement &amp; Prioritization</h3>
@@ -385,7 +359,7 @@
           <a href="ps2-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ PROBLEM SPACE 3 ============ -->
+        <!-- ============ PROBLEM SPACE 3 (col 3) ============ -->
         <div class="problem-card problem-card--ps">
           <div class="problem-number">03</div>
           <h3>Inventory Sales Pipeline Optimization</h3>
@@ -393,19 +367,24 @@
           <a href="ps5-checklist.html" class="btn btn-primary btn-sm">Check if your agent meets judging criteria &rarr;</a>
         </div>
 
-        <!-- ============ JUDGES' & MENTORS' GUIDE (column 4, row 1) ============ -->
-        <div class="problem-card problem-card--judges">
-          <h3>Judges' &amp; Mentors' Guide</h3>
-          <p>Scoring rubric, evaluation criteria, and guidance for judges and mentors participating in Hacking Health Toronto 2026.</p>
-          <a href="judges-guide.html" class="btn btn-primary btn-sm">View Judges' Guide &rarr;</a>
-        </div>
+        <!-- ============ COL 4: Judges + Submission stacked ============ -->
+        <div class="problem-col-4">
 
-        <!-- ============ SUBMISSION GUIDELINES (column 4, row 2) ============ -->
-        <div class="problem-card problem-card--purple problem-card--submission">
-          <div class="deco-circle"></div>
-          <h3>Submission Guidelines</h3>
-          <p>Please submit your final code to your team's submission folder by 1:00 PM on Day 2.</p>
-          <div class="deadline-pill">Deadline: 1:00 PM — Day 2</div>
+          <!-- Judges' & Mentors' Guide (top) -->
+          <div class="problem-card">
+            <h3>Judges' &amp; Mentors' Guide</h3>
+            <p>Scoring rubric, evaluation criteria, and guidance for judges and mentors participating in Hacking Health Toronto 2026.</p>
+            <a href="judges-guide.html" class="btn btn-primary btn-sm">View Judges' Guide &rarr;</a>
+          </div>
+
+          <!-- Submission Guidelines (bottom) -->
+          <div class="problem-card problem-card--purple">
+            <div class="deco-circle"></div>
+            <h3>Submission Guidelines</h3>
+            <p>Please submit your final code to your team's submission folder by 1:00 PM on Day 2.</p>
+            <div class="deadline-pill">Deadline: 1:00 PM — Day 2</div>
+          </div>
+
         </div>
 
       </div>
