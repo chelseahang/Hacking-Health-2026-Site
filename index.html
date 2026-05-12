@@ -7,6 +7,7 @@
   <meta name="description" content="Join us for Hacking Health Toronto 2026 on May 25–26, 2026 at the Snowflake Office, 16 York St., Toronto." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     body {
       background-color: #0a0a0a;
@@ -134,11 +135,17 @@
       color: #e0e0e0;
     }
 
-    /* Dark styled map */
-    .venue-map iframe {
+    .venue-map {
       border-radius: 12px;
       border: 2px solid #7c3aed;
-      filter: invert(90%) hue-rotate(180deg) saturate(0.8) brightness(0.85);
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .venue-map #map {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
     }
 
     #schedule {
@@ -303,12 +310,7 @@
         </div>
 
         <div class="venue-map">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-79.3830%2C43.6420%2C-79.3730%2C43.6480&amp;layer=mapnik&amp;marker=43.6452%2C-79.3780"
-            title="Venue map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <div id="map"></div>
         </div>
       </div>
     </div>
@@ -446,6 +448,23 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Initialize dark-themed map
+    const map = L.map('map').setView([43.6452, -79.3780], 15);
+    
+    // Dark theme tiles from CartoDB
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      subdomains: 'abcd',
+      maxZoom: 20
+    }).addTo(map);
+    
+    // Add marker
+    L.marker([43.6452, -79.3780]).addTo(map)
+      .bindPopup('<strong>Snowflake Office</strong><br>16 York St., Toronto')
+      .openPopup();
+  </script>
 </body>
 </html>
