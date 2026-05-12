@@ -49,15 +49,16 @@
       font-weight: 600;
     }
 
-    /* Key Dates Bar - solid block no glow */
+    /* Key Dates Bar - solid purple gradient block */
     .key-dates-bar {
-      background: #1a0f2e;
-      border-top: 2px solid #7c3aed;
-      border-bottom: 2px solid #7c3aed;
+      background: linear-gradient(135deg, #2d1b4e 0%, #3d2563 50%, #2d1b4e 100%);
+      border-top: 2px solid #a78bfa;
+      border-bottom: 2px solid #a78bfa;
+      padding: 2rem 0;
     }
 
     .key-dates-heading {
-      color: #c4b5fd;
+      color: #ffffff;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -82,70 +83,92 @@
     }
 
     .key-date-divider {
-      background: linear-gradient(180deg, transparent, #7c3aed, transparent);
+      background: linear-gradient(180deg, transparent, #c4b5fd, transparent);
     }
 
-    /* Sections - keep clean dark */
+    /* Sections */
     .section {
       background-color: #0a0a0a;
     }
 
     .section-alt {
-      background-color: #0f0a1e;
+      background: linear-gradient(135deg, #0f0a1e 0%, #1a0f2e 100%);
+      position: relative;
     }
 
     .section-title {
       color: #c4b5fd;
       font-weight: 800;
+      font-size: 2rem;
     }
 
     .section-subtitle {
       color: #a78bfa;
       font-weight: 600;
+      font-size: 1.1rem;
     }
 
-    /* Venue - no glow */
+    /* Venue - prettier styling */
     .venue-info h3 {
-      color: #c4b5fd;
+      color: #ffffff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
     .venue-info h4 {
-      color: #a78bfa;
+      color: #c4b5fd;
       font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
     }
 
     .venue-info p {
       color: #e0e0e0;
+      line-height: 1.8;
     }
 
     .floor-card {
-      background: #1a0f2e;
+      background: linear-gradient(135deg, #2d1b4e 0%, #3d2563 100%);
       border: 2px solid #7c3aed;
-      border-radius: 12px;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
     }
 
     .floor-card--highlight {
-      border-left: 5px solid #a78bfa;
+      border-left: 5px solid #c4b5fd;
     }
 
     .floor-badge {
-      color: #c4b5fd;
+      color: #ffffff;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
       font-weight: 700;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 1rem;
     }
 
     .floor-card ul {
       color: #e0e0e0;
+      line-height: 1.8;
+    }
+
+    .floor-card ul li {
+      margin-bottom: 0.5rem;
     }
 
     .venue-map iframe {
-      border-radius: 12px;
+      border-radius: 16px;
       border: 2px solid #7c3aed;
     }
 
-    /* Schedule - this section gets the gradient treatment */
+    /* Schedule - gradient treatment */
     #schedule {
       background: linear-gradient(160deg, #0a0a0a 0%, #1a0f2e 40%, #2d1b4e 70%, #1a0f2e 100%);
     }
