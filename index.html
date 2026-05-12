@@ -13,7 +13,6 @@
       color: #ffffff;
     }
 
-    /* Fix cut-off title gradient */
     .title-highlight {
       background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 50%, #7c3aed 100%);
       -webkit-background-clip: text;
@@ -38,7 +37,6 @@
       color: #c4b5fd;
     }
 
-    /* Hero */
     .hero {
       background-color: #0a0a0a;
     }
@@ -49,7 +47,6 @@
       font-weight: 600;
     }
 
-    /* Key Dates Bar - solid purple gradient block */
     .key-dates-bar {
       background: linear-gradient(135deg, #2d1b4e 0%, #3d2563 50%, #2d1b4e 100%);
       border-top: 2px solid #a78bfa;
@@ -85,7 +82,6 @@
       background: linear-gradient(180deg, transparent, #c4b5fd, transparent);
     }
 
-    /* Sections */
     .section {
       background-color: #0a0a0a;
     }
@@ -96,7 +92,6 @@
 
     .section-title {
       color: #c4b5fd;
-      font-weight: 800;
     }
 
     .section-subtitle {
@@ -104,7 +99,6 @@
       font-weight: 600;
     }
 
-    /* Venue - untouched, only color theming */
     .venue-info h3 {
       color: #ffffff;
     }
@@ -140,12 +134,13 @@
       color: #e0e0e0;
     }
 
+    /* Dark styled map */
     .venue-map iframe {
       border-radius: 12px;
       border: 2px solid #7c3aed;
+      filter: invert(90%) hue-rotate(180deg) saturate(0.8) brightness(0.85);
     }
 
-    /* Schedule - gradient treatment */
     #schedule {
       background: linear-gradient(160deg, #0a0a0a 0%, #1a0f2e 40%, #2d1b4e 70%, #1a0f2e 100%);
     }
@@ -203,7 +198,6 @@
       color: #c4b5fd;
     }
 
-    /* Footer */
     .footer {
       background: linear-gradient(90deg, #0f0a1e 0%, #1a0f2e 100%);
       border-top: 2px solid #7c3aed;
