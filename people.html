@@ -8,7 +8,6 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Black theme color overrides only */
     body {
       background-color: #000000;
       color: #ffffff;
@@ -16,7 +15,7 @@
 
     .nav {
       background-color: #0a0a0a;
-      border-bottom: 1px solid #333333;
+      border-bottom: 1px solid #2a1a4a;
     }
 
     .nav-brand,
@@ -25,33 +24,62 @@
     }
 
     .nav-links a:hover {
-      color: #e0e0e0;
+      color: #a78bfa;
     }
 
     .guide-page-header {
-      background-color: #0a0a0a;
-      border-bottom: 1px solid #333333;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0f2e 100%);
+      border-bottom: 1px solid #2a1a4a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide-page-header::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .guide-page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.1) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .guide-page-header h1 {
       color: #ffffff;
+      position: relative;
+      z-index: 1;
     }
 
     .guide-page-header p {
-      color: #e0e0e0;
+      color: #c4b5fd;
+      position: relative;
+      z-index: 1;
     }
 
     .guide-tabs-bar {
       background-color: #000000;
-      border-bottom: 1px solid #333333;
+      border-bottom: 1px solid #2a1a4a;
     }
 
     .guide-tab {
       color: #a0a0a0;
+      transition: color 0.3s ease;
     }
 
     .guide-tab:hover {
-      color: #e0e0e0;
+      color: #a78bfa;
     }
 
     .guide-tab.active {
@@ -69,19 +97,53 @@
 
     .guide-section-title {
       color: #ffffff;
+      position: relative;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .guide-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      border-radius: 2px;
     }
 
     .speaker-card {
-      background-color: #1a1a1a;
-      border: 1px solid #333333;
+      background: linear-gradient(135deg, #1a1a1a 0%, #1a0f2e 100%);
+      border: 1px solid #2a1a4a;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .speaker-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #7c3aed, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .speaker-card:hover::before {
+      opacity: 1;
     }
 
     .speaker-card:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 28px rgba(124, 58, 237, 0.25);
       border-color: #7c3aed;
       transform: translateY(-4px);
+      background: linear-gradient(135deg, #1f1f1f 0%, #200f3a 100%);
     }
 
     .speaker-card h3 {
@@ -89,7 +151,8 @@
     }
 
     .speaker-title {
-      color: #7c3aed;
+      color: #a78bfa;
+      font-weight: 600;
     }
 
     .speaker-card p {
@@ -98,11 +161,12 @@
 
     .speaker-photo {
       background-color: #0a0a0a;
+      border-bottom: 1px solid #2a1a4a;
     }
 
     .footer {
       background-color: #0a0a0a;
-      border-top: 1px solid #333333;
+      border-top: 1px solid #2a1a4a;
       color: #a0a0a0;
     }
   </style>
@@ -268,13 +332,12 @@
           <p class="speaker-title">Product Owner Strategic Accounts AA &amp; AI &mdash; Digital GTN Strategic Accounts &amp; NA MA PL</p>
         </div>
 
-        
         <div class="speaker-card">
-          <div class="speaker-photo speaker-photo--img"><img src="assets/onur-yorukoglu.jpg"  /></div>
+          <div class="speaker-photo speaker-photo--img"><img src="assets/onur-yorukoglu.jpg" /></div>
           <h3>Onur Yorukoglu</h3>
           <p class="speaker-title">Product Line Owner - Commercial Advanced Analytics & GenAI</p>
         </div>
-        
+
       </div>
     </div>
   </section>
