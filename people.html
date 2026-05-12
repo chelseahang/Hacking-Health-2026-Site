@@ -7,174 +7,6 @@
   <meta name="description" content="Meet the speakers, judges, and mentors at Hacking Health Toronto 2026." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    :root {
-      --bg-primary: #000000;
-      --bg-secondary: #0a0a0a;
-      --bg-tertiary: #1a1a1a;
-      --text-primary: #ffffff;
-      --text-secondary: #e0e0e0;
-      --text-muted: #a0a0a0;
-      --border-color: #333333;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      --card-hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-    }
-
-    .nav {
-      background-color: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .guide-page-header {
-      background-color: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 3rem 0;
-    }
-
-    .guide-page-header h1 {
-      color: var(--text-primary);
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .guide-page-header p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .guide-tabs-bar {
-      background-color: var(--bg-primary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 1.5rem 0;
-    }
-
-    .guide-tabs {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .guide-tab {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .guide-tab:hover {
-      color: var(--text-secondary);
-    }
-
-    .guide-tab.active {
-      color: var(--text-primary);
-      border-bottom-color: #7c3aed;
-    }
-
-    .guide-section {
-      background-color: var(--bg-primary);
-      padding: 3rem 0;
-    }
-
-    .guide-section-alt {
-      background-color: var(--bg-secondary);
-    }
-
-    .guide-section-title {
-      color: var(--text-primary);
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .speakers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .speaker-card {
-      background-color: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--card-shadow);
-    }
-
-    .speaker-card:hover {
-      box-shadow: var(--card-hover-shadow);
-      border-color: #7c3aed;
-      transform: translateY(-4px);
-    }
-
-    .speaker-photo {
-      width: 100%;
-      height: 200px;
-      background-color: var(--bg-secondary);
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .speaker-photo--img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .speaker-card h3 {
-      color: var(--text-primary);
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .speaker-title {
-      color: #7c3aed;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .speaker-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .footer {
-      background-color: var(--bg-secondary);
-      border-top: 1px solid var(--border-color);
-      padding: 2rem 0;
-      color: var(--text-muted);
-    }
-
-    .footer-logo {
-      height: 30px;
-      margin-right: 1rem;
-      vertical-align: middle;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-  </style>
 </head>
 <body>
 
@@ -195,6 +27,7 @@
     </div>
   </header>
 
+  <!-- Page header -->
   <div class="guide-page-header">
     <div class="container">
       <h1>People</h1>
@@ -202,6 +35,7 @@
     </div>
   </div>
 
+  <!-- In-page tab bar -->
   <div class="guide-tabs-bar">
     <div class="container">
       <nav class="guide-tabs">
@@ -211,6 +45,9 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       SPEAKERS
+       ============================================================ -->
   <section id="speakers" class="guide-section">
     <div class="container">
       <h2 class="guide-section-title">Keynote Speakers</h2>
@@ -238,6 +75,9 @@
     </div>
   </section>
 
+  <!-- ============================================================
+       JUDGES & DATA EXPERTS
+       ============================================================ -->
   <section id="judges" class="guide-section guide-section-alt">
     <div class="container">
       <h2 class="guide-section-title">Judges &amp; Data Experts</h2>
@@ -329,12 +169,13 @@
           <p class="speaker-title">Product Owner Strategic Accounts AA &amp; AI &mdash; Digital GTN Strategic Accounts &amp; NA MA PL</p>
         </div>
 
+        
         <div class="speaker-card">
           <div class="speaker-photo speaker-photo--img"><img src="assets/onur-yorukoglu.jpg"  /></div>
           <h3>Onur Yorukoglu</h3>
           <p class="speaker-title">Product Line Owner - Commercial Advanced Analytics & GenAI</p>
         </div>
-
+        
       </div>
     </div>
   </section>
