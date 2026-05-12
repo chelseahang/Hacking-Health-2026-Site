@@ -7,6 +7,127 @@
   <meta name="description" content="Frequently asked questions about Hacking Health Toronto 2026." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Black theme color overrides only */
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .nav {
+      background-color: #0a0a0a;
+      border-bottom: 1px solid #333333;
+    }
+
+    .nav-brand,
+    .nav-links a {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover {
+      color: #e0e0e0;
+    }
+
+    .section {
+      background-color: #000000;
+    }
+
+    .section-title {
+      color: #ffffff;
+    }
+
+    .container-narrow {
+      max-width: 800px;
+    }
+
+    .code-of-conduct {
+      background-color: #1a1a1a;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    .code-of-conduct h3 {
+      color: #ffffff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .code-of-conduct h3:first-child {
+      margin-top: 0;
+    }
+
+    .code-of-conduct p {
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background-color: #1a1a1a;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      border-color: #7c3aed;
+    }
+
+    .faq-item summary {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      color: #7c3aed;
+      font-size: 1.5rem;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      color: #e0e0e0;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #0a0a0a;
+      border-top: 1px solid #333333;
+      color: #a0a0a0;
+    }
+  </style>
 </head>
 <body>
 
