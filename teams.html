@@ -7,6 +7,47 @@
   <meta name="description" content="Meet the teams participating in Hacking Health Toronto 2026." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .team-card {
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.5);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .team-card-header {
+      background: rgba(124, 58, 237, 0.2);
+      padding: 0.75rem 1.1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+    }
+    .team-member {
+      padding: 0.5rem 1.1rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+    }
+    .team-member:last-child { border-bottom: none; }
+    .team-room { display: block; font-size: 0.78rem; font-weight: 400; color: #a78bfa; margin-top: 0.1rem; }
+    .team-search-wrap { margin-top: 1.75rem; max-width: 420px; }
+    .team-search-input {
+      width: 100%; padding: 0.7rem 1rem; border-radius: 10px;
+      border: 1px solid rgba(124,58,237,0.4); background: rgba(15,23,42,0.7);
+      color: #e2e8f0; font-size: 0.95rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .team-search-input:focus { border-color: #7c3aed; }
+    .team-search-hint { font-size: 0.82rem; color: #94a3b8; margin-top: 0.4rem; min-height: 1.2em; }
+    .team-card.search-match { border-color: rgba(167,139,250,0.7); box-shadow: 0 0 0 2px rgba(124,58,237,0.35); }
+  </style>
 </head>
 <body>
 
@@ -32,7 +73,162 @@
   <section class="section">
     <div class="container">
       <h2 class="section-title">Teams</h2>
-      <p class="section-subtitle">Content coming soon.</p>
+      <p class="section-subtitle">Find your team here.</p>
+
+      <div class="team-search-wrap" style="margin-left:auto;margin-right:auto;">
+        <input type="search" id="teamSearch" class="team-search-input"
+               placeholder="Search your name..." autocomplete="off" />
+        <p class="team-search-hint" id="teamSearchHint" style="text-align:center;"></p>
+      </div>
+
+      <div class="teams-grid">
+
+        <div class="team-card">
+          <div class="team-card-header">Team 1<span class="team-room">Niagara Falls &middot; Floor 32</span></div>
+          <div class="team-member">Palvisha Sharma</div>
+          <div class="team-member">Pierre Sanchez</div>
+          <div class="team-member">Sanari Wickramaratne</div>
+          <div class="team-member">Jessica Yang</div>
+          <div class="team-member">Eric LeFrancois</div>
+          <div class="team-member">Elodie Cormier</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 2<span class="team-room">Mimico Creek &middot; Floor 32</span></div>
+          <div class="team-member">Shwetank Yadav</div>
+          <div class="team-member">Jayson Cabrera</div>
+          <div class="team-member">Ahmed Mokhtar</div>
+          <div class="team-member">Trinley Palmo</div>
+          <div class="team-member">Angela Bakaj</div>
+          <div class="team-member">Lingfeng Shi</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 3<span class="team-room">Lake Simcoe &middot; Floor 32</span></div>
+          <div class="team-member">Khalid Hossain</div>
+          <div class="team-member">Kirsten Sotelo</div>
+          <div class="team-member">Osama Abdulghani</div>
+          <div class="team-member">Ana Claudia Belarmino Salgado</div>
+          <div class="team-member">Maxence Donio</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 4<span class="team-room">Bluffer&#8217;s Park &middot; Floor 31</span></div>
+          <div class="team-member">Raj Krishnan Vijayaraj</div>
+          <div class="team-member">Zijie Zhao</div>
+          <div class="team-member">Himanshi Rawat</div>
+          <div class="team-member">Kevin Liu</div>
+          <div class="team-member">Michelle Ramjit</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 5<span class="team-room">Peninsula Lake &middot; Floor 32</span></div>
+          <div class="team-member">Ming Yau Lam</div>
+          <div class="team-member">Hanqi Zeng</div>
+          <div class="team-member">Vanessa Zeng</div>
+          <div class="team-member">Nitish Tripura</div>
+          <div class="team-member">Alexa Wilson</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 6<span class="team-room">Twelve Mile Bay &middot; Floor 32</span></div>
+          <div class="team-member">Oliver Morrow</div>
+          <div class="team-member">Aaditya Suri</div>
+          <div class="team-member">Aryaman Mishra</div>
+          <div class="team-member">Kelly Lau</div>
+          <div class="team-member">Danny Goldman</div>
+          <div class="team-member">Aleczandra Reyes</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 7<span class="team-room">Credit River &middot; Floor 32</span></div>
+          <div class="team-member">Chaorui-Tom Zhang</div>
+          <div class="team-member">Ghazaleh Delfi</div>
+          <div class="team-member">Gavincko Alagesan</div>
+          <div class="team-member">Weiyue Chen</div>
+          <div class="team-member">Gabriel Duff</div>
+          <div class="team-member">Iliana Ucha</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 8<span class="team-room">Birkdale River &middot; Floor 31</span></div>
+          <div class="team-member">Hien Tu</div>
+          <div class="team-member">Arshdeep Bamrah</div>
+          <div class="team-member">Mir Bin Roslan</div>
+          <div class="team-member">Fraser Williams</div>
+          <div class="team-member">Zarna Shah</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 9<span class="team-room">St. James Park &middot; Floor 31</span></div>
+          <div class="team-member">Jonathan Broadbent</div>
+          <div class="team-member">Calvin Liew</div>
+          <div class="team-member">Papiha Joharapurkar</div>
+          <div class="team-member">Deweena Parija</div>
+          <div class="team-member">Jonathan Li</div>
+          <div class="team-member">Jonathan Jarzabek</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 10<span class="team-room">Edwards Gardens &middot; Floor 31</span></div>
+          <div class="team-member">Raja Sekhar Godavarthi</div>
+          <div class="team-member">Fangze Liu</div>
+          <div class="team-member">Amir Madani</div>
+          <div class="team-member">Uzair Memon</div>
+          <div class="team-member">Caroline Sucsan</div>
+          <div class="team-member">Shree Jaganathan</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 11<span class="team-room">Christie Pitts &middot; Floor 31</span></div>
+          <div class="team-member">Magali Treuvelot</div>
+          <div class="team-member">Aarav Mahajan</div>
+          <div class="team-member">Catherine Ho</div>
+          <div class="team-member">Jonathan Brougham</div>
+          <div class="team-member">Jennifer Mo</div>
+          <div class="team-member">Jason Fok</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 12<span class="team-room">Muskoka &middot; Floor 31</span></div>
+          <div class="team-member">Buvneet Madan</div>
+          <div class="team-member">Opkirat Thukral</div>
+          <div class="team-member">Maya Zgrablic</div>
+          <div class="team-member">Bomin Kim</div>
+          <div class="team-member">Ajay Kumar Oruganti</div>
+          <div class="team-member">Arpitha Shirivanthe</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 13<span class="team-room">Philosopher&#8217;s Walk &middot; Floor 31</span></div>
+          <div class="team-member">Naomi Kothiyal</div>
+          <div class="team-member">Natalie Won</div>
+          <div class="team-member">Jadeyenne Wright</div>
+          <div class="team-member">Nazish Moledina</div>
+          <div class="team-member">Harpreet Kaur</div>
+          <div class="team-member">Mark Surka</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 14<span class="team-room">Don River &middot; Floor 32</span></div>
+          <div class="team-member">Julian Olano Medina</div>
+          <div class="team-member">Sai Sidarth Prabaharan</div>
+          <div class="team-member">Tahir Muhammad</div>
+          <div class="team-member">Yuanming Chen</div>
+          <div class="team-member">John Dourado</div>
+          <div class="team-member">Lisa Mcmahon</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-header">Team 15<span class="team-room">Sunnybrook &middot; Floor 31</span></div>
+          <div class="team-member">Gopi Revathi Sreenivasan</div>
+          <div class="team-member">Hai Dang Nguyen</div>
+          <div class="team-member">Hridey Jain</div>
+          <div class="team-member">Emily Xiao</div>
+          <div class="team-member">Raja Sekhar Godavarthi</div>
+        </div>
+
+      </div>
 
       <!-- Snowflake Map section -->
       <div style="margin-top:3rem;text-align:center;">
@@ -51,5 +247,26 @@
 
   <script src="auth.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.getElementById('teamSearch').addEventListener('input', function () {
+      var q = this.value.trim().toLowerCase();
+      var cards = document.querySelectorAll('.team-card');
+      var matches = 0;
+      cards.forEach(function (card) {
+        var members = card.querySelectorAll('.team-member');
+        var found = !q || Array.from(members).some(function (m) {
+          return m.textContent.toLowerCase().includes(q);
+        });
+        card.style.display = found ? '' : 'none';
+        card.classList.toggle('search-match', found && !!q);
+        if (found && q) matches++;
+      });
+      var hint = document.getElementById('teamSearchHint');
+      if (!q) { hint.textContent = ''; }
+      else if (matches === 0) { hint.textContent = 'No team found for that name.'; }
+      else if (matches === 1) { hint.textContent = 'Showing your team.'; }
+      else { hint.textContent = matches + ' teams match.'; }
+    });
+  </script>
 </body>
 </html>
