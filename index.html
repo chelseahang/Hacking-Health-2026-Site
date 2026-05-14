@@ -243,6 +243,7 @@
       <div class="hero-img-cta">
         <a href="#location" class="btn btn-ghost">Start Here</a>
         <a href="#schedule" class="btn btn-ghost">View Schedule</a>
+        <a href="video.html" class="btn btn-ghost">2025 Recap Video</a>
       </div>
     </div>
   </section>
@@ -453,14 +454,14 @@
   <script>
     // Initialize map with Voyager theme (light purple/blue aesthetic)
     const map = L.map('map').setView([43.6452, -79.3780], 15);
-    
+
     // CartoDB Voyager - beautiful light theme with purple/blue tones
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
       subdomains: 'abcd',
       maxZoom: 20
     }).addTo(map);
-    
+
     // Custom purple marker
     const purpleIcon = L.divIcon({
       className: 'custom-marker',
@@ -468,7 +469,7 @@
       iconSize: [30, 30],
       iconAnchor: [15, 30]
     });
-    
+
     L.marker([43.6452, -79.3780], {icon: purpleIcon}).addTo(map)
       .bindPopup('<strong style="color: #7c3aed;">Snowflake Office</strong><br>16 York St., Toronto')
       .openPopup();

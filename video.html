@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2025 Recap Video | Hacking Health Toronto 2026</title>
+  <meta name="description" content="Watch the 2025 Hacking Health Toronto recap video." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .video-page-hero {
+      background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+      padding: 3rem 0 2.5rem;
+      color: #fff;
+    }
+    .video-page-hero h1 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin: 0 0 0.5rem;
+      color: #fff;
+    }
+    .video-page-hero p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+    }
+    .video-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+    .video-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .video-player {
+      display: block;
+      width: 100%;
+      max-height: 540px;
+      background: #000;
+    }
+    .video-caption {
+      padding: 1.25rem 1.5rem;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(124, 58, 237, 0.15);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      margin-bottom: 1.25rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo-link">
+        <img src="assets/sanofi-logo.png" alt="Sanofi" class="nav-logo" />
+        <span class="nav-logo-x">&times;</span>
+        <img src="assets/snowflake-logo.png" alt="Snowflake" class="nav-logo nav-logo--snowflake" />
+      </a>
+      <a href="index.html" class="nav-brand">Hacking Health Toronto</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="people.html">People</a>
+        <a href="problem-spaces.html">Problem Spaces</a>
+        <a href="teams.html">Teams</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="video-page-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">&#8592; Back to Home</a>
+      <h1>2025 Recap Video</h1>
+      <p>Relive the highlights from Hacking Health Toronto 2025.</p>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <div class="video-card">
+      <video class="video-player" controls>
+        <source src="assets/event-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-caption">Hacking Health Toronto 2025 &mdash; Event Recap</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/sanofi-logo.png" alt="Sanofi" class="footer-logo" />
+      <span>&copy; 2026 Sanofi. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

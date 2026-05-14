@@ -8,6 +8,44 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
+
+    .nav {
+      background: linear-gradient(90deg, #0f0a1e 0%, #1a0f2e 100%);
+      border-bottom: 2px solid #7c3aed;
+    }
+
+    .nav-brand,
+    .nav-links a {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover {
+      color: #c4b5fd;
+    }
+
+    .section {
+      background-color: #0a0a0a;
+    }
+
+    .section-title {
+      color: #c4b5fd;
+    }
+
+    .section-subtitle {
+      color: #a78bfa;
+      font-weight: 600;
+    }
+
+    .footer {
+      background: linear-gradient(90deg, #0f0a1e 0%, #1a0f2e 100%);
+      border-top: 2px solid #7c3aed;
+      color: #a78bfa;
+    }
+
     .teams-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -15,38 +53,44 @@
       margin-top: 2rem;
     }
     .team-card {
-      border: 1px solid rgba(124, 58, 237, 0.25);
+      border: 1px solid #2a1a4a;
       border-radius: 12px;
       overflow: hidden;
-      background: rgba(15, 23, 42, 0.5);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(135deg, #1a1a1a 0%, #1a0f2e 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+    .team-card:hover {
+      border-color: #7c3aed;
+      box-shadow: 0 8px 28px rgba(124, 58, 237, 0.25);
+      transform: translateY(-3px);
     }
     .team-card-header {
-      background: rgba(124, 58, 237, 0.2);
+      background: linear-gradient(90deg, rgba(124,58,237,0.3) 0%, rgba(109,40,217,0.15) 100%);
       padding: 0.75rem 1.1rem;
       font-weight: 700;
-      color: #e2e8f0;
+      color: #ffffff;
       font-size: 0.95rem;
-      border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+      border-bottom: 1px solid #2a1a4a;
     }
     .team-member {
       padding: 0.5rem 1.1rem;
       font-size: 0.9rem;
-      color: #cbd5e1;
-      border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+      color: #e0e0e0;
+      border-bottom: 1px solid rgba(42, 26, 74, 0.6);
     }
     .team-member:last-child { border-bottom: none; }
-    .team-room { display: block; font-size: 0.78rem; font-weight: 400; color: #a78bfa; margin-top: 0.1rem; }
+    .team-room { display: block; font-size: 0.78rem; font-weight: 400; color: #c4b5fd; margin-top: 0.1rem; }
     .team-search-wrap { margin-top: 1.75rem; max-width: 420px; }
     .team-search-input {
       width: 100%; padding: 0.7rem 1rem; border-radius: 10px;
-      border: 1px solid rgba(124,58,237,0.4); background: rgba(15,23,42,0.7);
-      color: #e2e8f0; font-size: 0.95rem; outline: none;
+      border: 1px solid #2a1a4a; background: #1a0f2e;
+      color: #ffffff; font-size: 0.95rem; outline: none;
       transition: border-color 0.2s;
     }
     .team-search-input:focus { border-color: #7c3aed; }
-    .team-search-hint { font-size: 0.82rem; color: #94a3b8; margin-top: 0.4rem; min-height: 1.2em; }
-    .team-card.search-match { border-color: rgba(167,139,250,0.7); box-shadow: 0 0 0 2px rgba(124,58,237,0.35); }
+    .team-search-hint { font-size: 0.82rem; color: #a78bfa; margin-top: 0.4rem; min-height: 1.2em; }
+    .team-card.search-match { border-color: #a78bfa; box-shadow: 0 0 0 2px rgba(124,58,237,0.4); }
   </style>
 </head>
 <body>
@@ -73,7 +117,7 @@
   <section class="section">
     <div class="container">
       <h2 class="section-title">Teams</h2>
-      <p class="section-subtitle">Find your teams here! Scroll down for a map of the Snowflake Office.</p>
+      <p class="section-subtitle">Find your team here.</p>
 
       <div class="team-search-wrap" style="margin-left:auto;margin-right:auto;">
         <input type="search" id="teamSearch" class="team-search-input"
@@ -232,9 +276,9 @@
 
       <!-- Snowflake Map section -->
       <div style="margin-top:3rem;text-align:center;">
-        <h3 style="margin-bottom:0.5rem;">Snowflake Map</h3>
-        <p style="color:var(--text-muted);margin-bottom:1rem;">Find your team according to the room assignments below!</p>
-        <img src="assets/snowflake-map.png" alt="Snowflake Map — floor plan showing team room assignments" style="max-width:660px;width:100%;border-radius:8px;display:block;margin:0 auto;" />
+        <h3 style="margin-bottom:0.5rem;color:#c4b5fd;">Snowflake Map</h3>
+        <p style="color:#a78bfa;margin-bottom:1rem;">Find your team according to the room assignments below!</p>
+        <img src="assets/snowflake-map.png" alt="Snowflake Map — floor plan showing team room assignments" style="max-width:660px;width:100%;border-radius:8px;border:2px solid #2a1a4a;display:block;margin:0 auto;" />
       </div>
     </div>
   </section>
